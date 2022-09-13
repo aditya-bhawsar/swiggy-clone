@@ -1,4 +1,3 @@
-import org.jetbrains.kotlin.kapt3.base.Kapt.kapt
 
 plugins {
     id(BuildPlugins.ANDROID_APPLICATION_PLUGIN)
@@ -66,6 +65,9 @@ dependencies {
     implementation(Lib.Android.COMPOSE_MATERIAL)
     implementation(Lib.Android.COMPOSE_TOOLING_PREVIEW)
     implementation(Lib.Android.COMPOSE_ACTIVITY)
+    implementation(project( ":domain"))
+    implementation(project(":data"))
+    implementation(project(":navigator"))
     testImplementation(Lib.Test.JUNIT)
     androidTestImplementation(Lib.Test.ANDROID_JUNIT)
     androidTestImplementation(Lib.Test.ESPRESSO_CORE)

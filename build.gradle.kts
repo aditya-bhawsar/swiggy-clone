@@ -8,7 +8,6 @@ buildscript {
         classpath(BuildPlugins.KOTLIN_GRADLE_PLUGIN)
         classpath(BuildPlugins.DAGGER_HILT_PLUGIN)
         classpath(kotlin("serialization", version =  Lib.Kotlin.KOTLIN_VERSION))
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.10")
     }
 } // Top-level build file where you can add configuration options common to all sub-projects/modules.
 

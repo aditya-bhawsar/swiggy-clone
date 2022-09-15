@@ -39,6 +39,14 @@ object Lib {
         const val APP_COMPAT = "androidx.appcompat:appcompat:1.3.0-beta01"
     }
 
+    object Room {
+        private const val ROOM_VERSION = "2.4.1"
+        const val ROOM_RUNTIME = "androidx.room:room-runtime:$ROOM_VERSION"
+        const val ROOM_COMPILER = "androidx.room:room-compiler:$ROOM_VERSION"
+        const val ROOM_KTX = "androidx.room:room-ktx:$ROOM_VERSION"
+        const val ROOM_PAGING = "androidx.room:room-paging:$ROOM_VERSION"
+    }
+
     object Kotlin {
         const val KOTLIN_VERSION = "1.7.0"
         private const val KTX_CORE_VERSION = "1.7.0"

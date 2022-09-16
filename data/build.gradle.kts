@@ -50,4 +50,10 @@ dependencies {
     implementation(project(":domain"))
     kapt(Lib.DI.HILT_ANDROID_COMPILER)
 
+    /* Room */
+    api(Lib.Room.ROOM_RUNTIME)
+    kapt(Lib.Room.ROOM_COMPILER)
+    api(Lib.Room.ROOM_KTX)
+    api(Lib.Room.ROOM_PAGING)
+
 }

@@ -1,4 +1,4 @@
-package com.mutualmobile.swiggy_clone
+package com.mutualmobile.swiggy_clone.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -10,6 +10,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.mutualmobile.swiggy_clone.ui.screens.cart.CartScreen
 import com.mutualmobile.swiggy_clone.ui.theme.SwiggyCloneTheme
 
 class MainActivity : ComponentActivity() {
@@ -17,24 +18,8 @@ class MainActivity : ComponentActivity() {
     super.onCreate(savedInstanceState)
     setContent {
       SwiggyCloneTheme {
-        // A surface container using the 'background' color from the theme
-        Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
-          Greeting("Android")
-        }
+       CartScreen()
       }
     }
-  }
-}
-
-@Composable
-fun Greeting(name: String) {
-  Text(text = "Hello $name!")
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-  SwiggyCloneTheme {
-    Greeting("Android")
   }
 }

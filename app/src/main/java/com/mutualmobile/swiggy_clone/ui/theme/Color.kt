@@ -12,5 +12,8 @@ val Pink40 = Color(0xFF7D5260)
 
 val SwiggyOrangePrimary = Color(0xFFffeee7)
 val SwiggyOrangeSecondary = Color(0xFFda601e)
-
+val SwiggyOrangeText = Color(0xFFfd4f00)
+val SwiggyGreen = Color(0xFF19a672)
 val SwiggySubtitleTextColor = Color(0xFF636363)
+val SwiggyBackgroundColor = Color(0xFFf2f1f6)
+val SwiggySubHeaderTextColor = Color(0xFF626166)

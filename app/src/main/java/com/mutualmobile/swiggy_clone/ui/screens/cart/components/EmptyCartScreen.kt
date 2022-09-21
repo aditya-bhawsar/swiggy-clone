@@ -20,6 +20,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.mutualmobile.swiggy_clone.R
+import com.mutualmobile.swiggy_clone.ui.common_composables.BackButton
 import com.mutualmobile.swiggy_clone.ui.common_composables.SwiggyPrimaryButton
 
 @Composable
@@ -31,6 +32,9 @@ fun EmptyCartScreen() {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+        BackButton {
+
+        }
         Image(
             painter = painterResource(id = R.drawable.empty_cart_bg),
             contentDescription = "",

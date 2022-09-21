@@ -10,31 +10,41 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.mutualmobile.swiggy_clone.common.composable.rememberScreenState
+import com.mutualmobile.swiggy_clone.common.sealed.ScreenType
 import com.mutualmobile.swiggy_clone.ui.theme.SwiggyCloneTheme
 
 class MainActivity : ComponentActivity() {
-  override fun onCreate(savedInstanceState: Bundle?) {
-    super.onCreate(savedInstanceState)
-    setContent {
-      SwiggyCloneTheme {
-        // A surface container using the 'background' color from the theme
-        Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
-          Greeting("Android")
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContent {
+            SwiggyCloneTheme {
+                // A surface container using the 'background' color from the theme
+                Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
+                    Greeting("Android")
+                }
+            }
         }
-      }
     }
-  }
 }
 
 @Composable
 fun Greeting(name: String) {
-  Text(text = "Hello $name!")
+    val uiState = rememberScreenState()
+    if (uiState.widthState is ScreenType.Small) {
+        Text(text = "Hello small screen $name!")
+    } else if ((uiState.heightState is ScreenType.Medium)) {
+        Text(text = "Hello medium screen $name!")
+    } else {
+        Text(text = "Hello Large screen $name!")
+    }
 }
 
 @Preview(showBackground = true)
+@Preview(showSystemUi = true)
 @Composable
 fun DefaultPreview() {
-  SwiggyCloneTheme {
-    Greeting("Android")
-  }
+    SwiggyCloneTheme {
+        Greeting("Android")
+    }
 }

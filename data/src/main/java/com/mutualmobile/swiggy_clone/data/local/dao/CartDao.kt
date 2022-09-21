@@ -20,6 +20,9 @@ interface CartDao {
     @Delete
     suspend fun deleteItem(cartItem: CartItem)
 
-//    @Query("SELECT")
-//    fun getCartTotal() : Flow<Int>
+    @Query("SELECT SUM(price*quantity) AS RESULT FROM CartItem")
+    fun getCartTotal() : Flow<Int>
+
+    @Query("SELECT COUNT(*) FROM CartItem")
+    fun getCartQuantity() : Flow<Int>
 }

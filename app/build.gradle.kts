@@ -75,6 +75,9 @@ dependencies {
     debugImplementation(Lib.Android.COMPOSE_TOOLING)
     debugImplementation(Lib.Android.COMPOSE_MANIFEST)
 
+    /*COIL*/
+    implementation(Lib.Coil.COIL_LIB)
+
     /*DI*/
     implementation(Lib.DI.HILT_ANDROID)
     implementation(Lib.DI.HILT_NAVIGATION_COMPOSE)

@@ -75,8 +75,12 @@ dependencies {
     debugImplementation(Lib.Android.COMPOSE_TOOLING)
     debugImplementation(Lib.Android.COMPOSE_MANIFEST)
 
+     implementation(Lib.Android.MATERIAL_API)
     /*COIL*/
     implementation(Lib.Coil.COIL_LIB)
+
+    implementation(Lib.Accompanist.ACCOMPANIST_PAGER)
+    implementation(Lib.Accompanist.ACCOMPANIST_IDICATOR)
 
     /*DI*/
     implementation(Lib.DI.HILT_ANDROID)

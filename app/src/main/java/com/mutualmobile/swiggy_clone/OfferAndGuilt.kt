@@ -25,7 +25,7 @@ import com.mutualmobile.swiggy_clone.R.drawable
 fun OfferAndGuilt() {
   Row() {
     val modifier: Modifier = Modifier
-      .height(60.dp)
+      .height(70.dp)
       .weight(1f)
     OfferAndGuiltItem(modifier, title = "Offer zone")
     Spacer(modifier = Modifier.width(16.dp))
@@ -40,17 +40,13 @@ fun OfferAndGuiltItem(
 ) {
   Box(modifier = modifier) {
     Image(
-      modifier = modifier, painter = rememberAsyncImagePainter(
-      ContextCompat.getDrawable(
-        LocalContext.current, drawable.rounded_rectangle
-      )
-    ), contentDescription = "Background"
+      modifier = modifier, painter = getBackgroundImage(drawableId = drawable.rectangle), contentDescription = "Background"
     )
 
-    Row(modifier = modifier.padding(18.dp), verticalAlignment = Alignment.CenterVertically) {
+    Row(modifier = modifier.padding(24.dp), verticalAlignment = Alignment.CenterVertically) {
       Text(
         modifier = Modifier.weight(1f), text = title, fontSize = 15.sp,
-        fontWeight = FontWeight.Bold, color = Color.Black
+        fontWeight = FontWeight.Bold, color = Color.DarkGray
       )
       Image(painter = painterResource(drawable.burger), contentDescription = "image")
     }

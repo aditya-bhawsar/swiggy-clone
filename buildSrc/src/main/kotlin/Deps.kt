@@ -37,6 +37,7 @@ object Lib {
         const val COMPOSE_NAVIGATION =
             "androidx.navigation:navigation-compose:${COMPOSE_NAVIGATION_VERSION}"
         const val APP_COMPAT = "androidx.appcompat:appcompat:1.3.0-beta01"
+        const val MATERIAL_API = "com.google.android.material:material:1.6.1"
     }
 
     object Room {

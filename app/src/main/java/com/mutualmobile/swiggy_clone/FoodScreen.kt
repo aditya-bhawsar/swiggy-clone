@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.material.Divider
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -24,14 +25,15 @@ fun FoodScreen(foodScreenViewModel: FoodScreenViewModel) {
         Column(modifier = Modifier.padding(16.dp)) {
 
           OfferAndGuilt()
-
           getSpacer()
 
           HeaderTextView(title = "Top rated near you")
           TopRatedList(foodScreenViewModel.getTopRatedList())
 
           getSpacer()
+          ImageSlideShow(foodScreenViewModel.getImagesList())
 
+          getSpacer()
           HeaderTextView(title = "Get it quickly")
           TopRatedList(foodScreenViewModel.getQuickList())
 
@@ -64,4 +66,11 @@ fun HeaderTextView(title: String) {
 
 @Composable
 fun getSpacer() = Spacer(modifier = Modifier.height(16.dp))
+
+@Composable
+fun getDivider() = Divider(
+  color = Color.LightGray, thickness = 1.dp, modifier = Modifier
+  .height(1.dp)
+  .fillMaxWidth()
+)
 

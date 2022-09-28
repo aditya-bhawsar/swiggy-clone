@@ -163,4 +163,9 @@ class FoodScreenViewModel : ViewModel() {
     )
     return list
   }
+
+  fun getImagesList() = listOf(
+    R.drawable.slide_1, R.drawable.slide_2, R.drawable.slide_3, R.drawable.slide_4,
+    R.drawable.slide_5
+  )
 }

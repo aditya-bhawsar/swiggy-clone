@@ -10,7 +10,6 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -26,10 +25,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.mutualmobile.swiggy_clone.R
+import com.mutualmobile.swiggy_clone.common.composable.SpacerComponent
 import com.mutualmobile.swiggy_clone.ui.theme.SwiggyOrangeText
 import com.mutualmobile.swiggy_clone.ui.theme.SwiggySubHeaderTextColor
 
@@ -49,7 +50,7 @@ fun DeliveryInstructions() {
             items(instructions) { item ->
                 Row {
                     DeliveryInstructionsItem(imageResourceId = item.image, label = item.label)
-                    Spacer(modifier = Modifier.width(16.dp))
+                    SpacerComponent(dimensionResourceId = R.dimen.width_large, isVertical = false)
                 }
             }
         }
@@ -66,28 +67,28 @@ fun DeliveryInstructionsItem(imageResourceId: Int, label: Int) {
 
     Column(
         modifier = Modifier
-            .size(100.dp)
+            .size(dimensionResource(id = R.dimen.delivery_instruction_item_width))
             .clickable {
                 selected = !selected
             }
             .border(
                 width = if (selected) 1.dp else 0.dp,
                 color = if (selected) SwiggyOrangeText else Color.White,
-                shape = RoundedCornerShape(12.dp)
+                shape = RoundedCornerShape(dimensionResource(id = R.dimen.rounded_corner_large))
             )
-            .clip(RoundedCornerShape(12.dp))
+            .clip(RoundedCornerShape(dimensionResource(id = R.dimen.rounded_corner_large)))
             .background(Color.White)
-            .padding(horizontal = 16.dp),
+            .padding(horizontal = dimensionResource(id = R.dimen.padding_large)),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.Start
     ) {
         Icon(
             painter = painterResource(id = imageResourceId),
             contentDescription = "$label icon",
-            modifier = Modifier.size(32.dp),
+            modifier = Modifier.size(dimensionResource(id = R.dimen.icon_size_double_extra_large)),
             tint = if (selected) SwiggyOrangeText else SwiggySubHeaderTextColor
         )
-        Spacer(modifier = Modifier.width(16.dp))
+        SpacerComponent(dimensionResourceId = R.dimen.width_large, isVertical = false)
         Text(
             text = stringResource(id = label),
             style = MaterialTheme.typography.bodySmall,

@@ -24,11 +24,11 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.mutualmobile.swiggy_clone.R
-import com.mutualmobile.swiggy_clone.data.local.model.CartItem
-import com.mutualmobile.swiggy_clone.ui.common_composables.QuantityIncrementer
+import com.mutualmobile.swiggy_clone.common.composable.QuantityIncrementer
+import com.mutualmobile.swiggy_clone.domain.model.DMCartItem
 
 @Composable
-fun CartItems(cartItems:List<CartItem>) {
+fun CartItems(cartItems:List<DMCartItem>) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -58,7 +58,7 @@ fun CartItems(cartItems:List<CartItem>) {
 }
 
 @Composable
-fun CartListItem(cartItem: CartItem) {
+fun CartListItem(cartItem: DMCartItem) {
     Row(
         modifier = Modifier
             .fillMaxWidth()

@@ -19,14 +19,17 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.mutualmobile.swiggy_clone.R
+import com.mutualmobile.swiggy_clone.common.composable.SpacerComponent
+import com.mutualmobile.swiggy_clone.common.data.TipItem
 import com.mutualmobile.swiggy_clone.ui.theme.SwiggyOrangeText
 
 @Composable
-fun TipDeliveryPartner(onTipItemClicked: (tip: Int) -> Unit,tipValue:Int) {
+fun TipDeliveryPartner(onTipItemClicked: (tip: Int) -> Unit, tipValue: Int, tips: List<TipItem>) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -35,29 +38,22 @@ fun TipDeliveryPartner(onTipItemClicked: (tip: Int) -> Unit,tipValue:Int) {
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .clip(RoundedCornerShape(12.dp))
+                .clip(RoundedCornerShape(dimensionResource(id = R.dimen.rounded_corner_large)))
                 .background(Color.White)
-                .padding(16.dp)
+                .padding(dimensionResource(id = R.dimen.padding_large))
         ) {
             Text(
                 text = stringResource(id = R.string.delivery_desc),
                 style = MaterialTheme.typography.bodySmall
             )
-            Spacer(modifier = Modifier.height(16.dp))
-            TipsRow(onTipItemClicked,"₹$tipValue")
+            SpacerComponent(dimensionResourceId = R.dimen.height_large)
+            TipsRow(onTipItemClicked, "₹$tipValue", tips)
         }
     }
 }
 
 @Composable
-fun TipsRow(onTipItemClicked: (tip: Int) -> Unit,selected: String) {
-    val tips = listOf(
-        TipItem(label = stringResource(id = R.string.delivery_tip_10), value = 10),
-        TipItem(label = stringResource(id = R.string.delivery_tip_20), value = 20),
-        TipItem(label = stringResource(id = R.string.delivery_tip_30), value = 30),
-    )
-
-
+fun TipsRow(onTipItemClicked: (tip: Int) -> Unit, selected: String, tips: List<TipItem>) {
     Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceEvenly) {
         tips.forEach { item ->
             Surface(
@@ -95,8 +91,3 @@ fun TipsRow(onTipItemClicked: (tip: Int) -> Unit,selected: String) {
         }
     }
 }
-
-data class TipItem(
-    val label: String,
-    val value: Int
-)

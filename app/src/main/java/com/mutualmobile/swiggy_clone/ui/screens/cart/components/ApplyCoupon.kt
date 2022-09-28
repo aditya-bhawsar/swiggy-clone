@@ -18,9 +18,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.dp
 import com.mutualmobile.swiggy_clone.R
 import com.mutualmobile.swiggy_clone.ui.theme.SwiggySubHeaderTextColor
 
@@ -35,10 +35,10 @@ fun ApplyCoupon() {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .clip(RoundedCornerShape(12.dp))
+                .clip(RoundedCornerShape(dimensionResource(id = R.dimen.rounded_corner_large)))
                 .background(Color.White)
                 .clickable { }
-                .padding(12.dp),
+                .padding(dimensionResource(id = R.dimen.padding_12)),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
@@ -53,6 +53,6 @@ fun ApplyCoupon() {
                 modifier = Modifier.clickable { }
             )
         }
-        Spacer(modifier = Modifier.height(16.dp))
+        Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.height_large)))
     }
 }

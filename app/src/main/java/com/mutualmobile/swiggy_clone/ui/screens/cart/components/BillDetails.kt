@@ -5,7 +5,6 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -19,10 +18,12 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.PathEffect
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import com.mutualmobile.swiggy_clone.R
+import com.mutualmobile.swiggy_clone.common.composable.SpacerComponent
 import com.mutualmobile.swiggy_clone.ui.theme.SwiggyOrangeText
 import com.mutualmobile.swiggy_clone.ui.theme.SwiggySubHeaderTextColor
 
@@ -40,13 +41,18 @@ fun BillDetails(
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .clip(RoundedCornerShape(12.dp))
+                .clip(RoundedCornerShape(dimensionResource(id = R.dimen.rounded_corner_large)))
                 .background(Color.White)
-                .padding(horizontal = 16.dp, vertical = 24.dp),
+                .padding(
+                    horizontal = dimensionResource(id = R.dimen.width_large),
+                    vertical = dimensionResource(
+                        id = R.dimen.height_extra_large
+                    )
+                ),
             verticalArrangement = Arrangement.SpaceEvenly
         ) {
             BillItem(label = stringResource(id = R.string.item_total), value = itemTotal)
-            Spacer(modifier = Modifier.height(12.dp))
+            SpacerComponent(dimensionResourceId = R.dimen.height_12)
             BillItem(
                 label = stringResource(id = R.string.delivery_fee),
                 value = distanceFee,
@@ -57,9 +63,9 @@ fun BillDetails(
                 style = MaterialTheme.typography.bodySmall,
                 color = Color.Black.copy(alpha = 0.4f)
             )
-            Spacer(modifier = Modifier.height(12.dp))
+            SpacerComponent(dimensionResourceId = R.dimen.height_12)
             Divider()
-            Spacer(modifier = Modifier.height(12.dp))
+            SpacerComponent(dimensionResourceId = R.dimen.height_12)
             if (deliveryTip == 0) {
                 Row(
                     modifier = Modifier.fillMaxWidth(),
@@ -84,15 +90,15 @@ fun BillDetails(
             } else {
                 BillItem(label = stringResource(id = R.string.delivery_tip), value = deliveryTip)
             }
-            Spacer(modifier = Modifier.height(12.dp))
+            SpacerComponent(dimensionResourceId = R.dimen.height_12)
             BillItem(
                 label = stringResource(id = R.string.taxes_and_charges),
                 value = tax,
                 textDecoration = TextDecoration.Underline
             )
-            Spacer(modifier = Modifier.height(12.dp))
+            SpacerComponent(dimensionResourceId = R.dimen.height_12)
             Divider()
-            Spacer(modifier = Modifier.height(12.dp))
+            SpacerComponent(dimensionResourceId = R.dimen.height_12)
             BillItem(
                 label = stringResource(id = R.string.to_pay),
                 value = total,

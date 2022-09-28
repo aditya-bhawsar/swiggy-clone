@@ -1,8 +1,7 @@
-package com.mutualmobile.swiggy_clone.ui.common_composables
+package com.mutualmobile.swiggy_clone.common.composable
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -10,7 +9,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.unit.dp
+import androidx.compose.ui.res.dimensionResource
+import com.mutualmobile.swiggy_clone.R
 import com.mutualmobile.swiggy_clone.ui.theme.SwiggyOrangePrimary
 import com.mutualmobile.swiggy_clone.ui.theme.SwiggyOrangeSecondary
 
@@ -20,9 +20,14 @@ fun SwiggyPrimaryButton(text: String, onCLick: () -> Unit) {
         text = text,
         modifier = Modifier
             .wrapContentWidth()
-            .clip(RoundedCornerShape(8.dp))
+            .clip(RoundedCornerShape(dimensionResource(id = R.dimen.rounded_corner_medium)))
             .background(SwiggyOrangePrimary)
-            .padding(horizontal = 16.dp, vertical = 12.dp)
+            .padding(
+                horizontal = dimensionResource(id = R.dimen.padding_large),
+                vertical = dimensionResource(
+                    id = R.dimen.padding_12
+                )
+            )
             .clickable {
                 onCLick()
             },

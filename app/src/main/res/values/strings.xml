@@ -1,4 +1,40 @@
 <resources>
   <string name="app_name">Swiggy Clone</string>
   <string name="toolbar_menu_description">Back</string>
+    <string name="app_name">Swiggy Clone</string>
+    <string name="empty_cart_title">Good Food is Always Cooking</string>
+    <string name="empty_cart_subtitle">Your cart is empty. Add something from the menu</string>
+    <string name="browse_restaurants">Browse Restaurants</string>
+    <string name="offers_and_benefits">Offers &amp; Benefits</string>
+    <string name="tip_delivery">Tip your Delivery Partner!</string>
+    <string name="delivery_instructions">Delivery Instructions</string>
+    <string name="bill_details">Bill Details</string>
+    <string name="review_order">Review your order and address details to avoid cancellations</string>
+    <string name="avoid_cancellation">Avoid cancellation as it leads to food wastage</string>
+    <string name="note">Note : </string>
+    <string name="policy">If you cancel within 60 seconds of placing your order, a 100% refund will be issued. No refund for cancellations made after 60 seconds.</string>
+    <string name="read_policy">READ CANCELLATION POLICY</string>
+
+    <string name="avoid_bell">Avoid ringing bell</string>
+    <string name="leave_door">Leave at the door</string>
+    <string name="directions">Directions to reach</string>
+    <string name="avoid_calling">Avoid calling</string>
+    <string name="leave_with_security">Leave with security</string>
+
+    <string name="apply_coupon">Apply Coupon</string>
+    <string name="delivery_desc">Thank your delivery partner by leaving them a tip. 100% of the tip will go to your delivery partner</string>
+    <string name="delivery_tip_10">₹10</string>
+    <string name="delivery_tip_20">₹20</string>
+    <string name="delivery_tip_30">₹30</string>
+    <string name="write_instructions">Write instructions for restaurant</string>
+    <string name="proceed_to_pay">Proceed to Pay</string>
+    <string name="view_detailed_bill">View Detailed Bill</string>
+
+    <string name="item_total">Item total</string>
+    <string name="delivery_fee">Delivery Fee | 8.4 kms</string>
+    <string name="delivery_fee_desc">This fee compensates your Delivery Partner fairly</string>
+    <string name="delivery_tip">Delivery Tip</string>
+    <string name="taxes_and_charges">Taxes and Charges</string>
+    <string name="add_tip">Add tip</string>
+    <string name="to_pay">To Pay</string>
 </resources>

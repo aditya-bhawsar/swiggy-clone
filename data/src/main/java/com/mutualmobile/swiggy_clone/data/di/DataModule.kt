@@ -4,6 +4,8 @@ import android.content.Context
 import androidx.room.Room
 import com.mutualmobile.swiggy_clone.data.local.SwiggyDatabase
 import com.mutualmobile.swiggy_clone.data.local.dao.CartDao
+import com.mutualmobile.swiggy_clone.data.local.repo.CartRepositoryImpl
+import com.mutualmobile.swiggy_clone.domain.repo.CartRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -28,5 +30,9 @@ object DataModule {
     fun provideCartDao(swiggyDatabase: SwiggyDatabase) : CartDao {
         return swiggyDatabase.cartDao()
     }
+
+    @Provides
+    @Singleton
+    fun provideCartRepository(cartDao: CartDao): CartRepository = CartRepositoryImpl(cartDao)
 
 }

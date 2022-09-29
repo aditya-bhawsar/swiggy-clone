@@ -15,6 +15,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Card
+import androidx.compose.material.Divider
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
@@ -33,7 +34,7 @@ import com.mutualmobile.swiggy_clone.R
 import com.mutualmobile.swiggy_clone.R.drawable
 import com.mutualmobile.swiggy_clone.getBackgroundImage
 import com.mutualmobile.swiggy_clone.getDivider
-import com.mutualmobile.swiggy_clone.viewmodels.PaymentsViewModel
+import com.mutualmobile.swiggy_clone.ui.screens.payment.PaymentsViewModel
 
 @Composable
 fun PaymentScreen(paymentsViewModel: PaymentsViewModel) {

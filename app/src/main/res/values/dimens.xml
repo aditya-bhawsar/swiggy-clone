@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="width_medium">8dp</dimen>
+    <dimen name="width_large">16dp</dimen>
+    <dimen name="height_12">12dp</dimen>
+    <dimen name="height_large">16dp</dimen>
+    <dimen name="height_extra_large">24dp</dimen>
+    <dimen name="scroll_view_padding_bottom">100dp</dimen>
+    <dimen name="app_bar_height">64dp</dimen>
+    <dimen name="padding_large">16dp</dimen>
+    <dimen name="padding_12">12dp</dimen>
+    <dimen name="icon_size_large">16dp</dimen>
+    <dimen name="icon_size_extra_large">24dp</dimen>
+    <dimen name="icon_size_double_extra_large">36dp</dimen>
+    <dimen name="vertical_space_medium">8dp</dimen>
+    <dimen name="rounded_corner_small">4dp</dimen>
+    <dimen name="rounded_corner_medium">8dp</dimen>
+    <dimen name="rounded_corner_large">12dp</dimen>
+    <dimen name="delivery_instruction_item_width">100dp</dimen>
+</resources>

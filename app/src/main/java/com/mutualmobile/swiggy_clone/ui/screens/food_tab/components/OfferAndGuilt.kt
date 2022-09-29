@@ -19,6 +19,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.mutualmobile.swiggy_clone.R.drawable
+import com.mutualmobile.swiggy_clone.common.composable.getBackgroundImage
 
 @Composable
 fun OfferAndGuilt() {

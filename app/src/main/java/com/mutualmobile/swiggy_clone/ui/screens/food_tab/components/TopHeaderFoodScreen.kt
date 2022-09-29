@@ -61,7 +61,7 @@ fun SearchButton() {
         modifier = Modifier
           .weight(1f)
           .padding(start = 16.dp), text = "Search for restaurant, item or more",
-        fontSize = 16.sp, color = Color.DarkGray
+        fontSize = 14.sp, color = Color.Gray
       )
       Image(
         modifier = Modifier.padding(end = 8.dp),

@@ -30,6 +30,9 @@ import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.PagerState
 import com.google.accompanist.pager.rememberPagerState
 import com.mutualmobile.swiggy_clone.R.drawable
+import com.mutualmobile.swiggy_clone.common.composable.getBackgroundImage
+import com.mutualmobile.swiggy_clone.common.composable.getDivider
+import com.mutualmobile.swiggy_clone.common.composable.getSpacer
 import kotlinx.coroutines.delay
 
 @OptIn(ExperimentalPagerApi::class)

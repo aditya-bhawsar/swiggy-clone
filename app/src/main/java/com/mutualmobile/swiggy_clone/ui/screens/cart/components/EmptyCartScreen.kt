@@ -2,6 +2,7 @@ package com.mutualmobile.swiggy_clone.ui.screens.cart.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -24,37 +25,42 @@ import com.mutualmobile.swiggy_clone.common.composable.SwiggyPrimaryButton
 
 @Composable
 fun EmptyCartScreen() {
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(Color.White),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        BackButton {
 
-        }
-        Image(
-            painter = painterResource(id = R.drawable.empty_cart_bg),
-            contentDescription = "",
-            modifier = Modifier.size(200.dp)
-        )
-        Spacer(modifier = Modifier.height(16.dp))
-        Text(
-            text = stringResource(id = R.string.empty_cart_title),
-            style = MaterialTheme.typography.bodyLarge
-        )
-        Spacer(modifier = Modifier.height(8.dp))
-        Text(
-            text = stringResource(id = R.string.empty_cart_subtitle),
-            style = MaterialTheme.typography.bodySmall
-        )
-        Spacer(modifier = Modifier.height(32.dp))
-        SwiggyPrimaryButton(text = stringResource(id = R.string.browse_restaurants)) {
+    Box(modifier = Modifier.fillMaxSize().background(Color.White)) {
 
+        Box(modifier = Modifier.fillMaxWidth().padding(20.dp), contentAlignment = Alignment.CenterStart){
+            BackButton {}
         }
 
+        Column(
+            modifier = Modifier.fillMaxSize(),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+
+            Image(
+                painter = painterResource(id = R.drawable.empty_cart_bg),
+                contentDescription = "",
+                modifier = Modifier.size(200.dp)
+            )
+            Spacer(modifier = Modifier.height(16.dp))
+            Text(
+                text = stringResource(id = R.string.empty_cart_title),
+                style = MaterialTheme.typography.bodyLarge
+            )
+            Spacer(modifier = Modifier.height(8.dp))
+            Text(
+                text = stringResource(id = R.string.empty_cart_subtitle),
+                style = MaterialTheme.typography.bodySmall
+            )
+            Spacer(modifier = Modifier.height(32.dp))
+            SwiggyPrimaryButton(text = stringResource(id = R.string.browse_restaurants)) {
+
+            }
+
+        }
     }
+
 }
 
 @Preview(showSystemUi = true)

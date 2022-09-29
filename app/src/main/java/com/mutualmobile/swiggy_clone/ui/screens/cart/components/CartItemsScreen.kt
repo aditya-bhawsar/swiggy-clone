@@ -34,13 +34,11 @@ import com.mutualmobile.swiggy_clone.ui.theme.SwiggyBackgroundColor
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun CartItemsScreen(cartItems: List<DMCartItem>, tips: List<TipItem>) {
+fun CartItemsScreen(cartItems: List<DMCartItem>, tips: List<TipItem>, isExpanded: Boolean) {
 
     val scaffoldState = rememberScaffoldState()
 
-    var tip by remember {
-        mutableStateOf(0)
-    }
+    var tip by remember { mutableStateOf(0) }
 
     Scaffold(scaffoldState = scaffoldState,
         topBar = {
@@ -71,17 +69,54 @@ fun CartItemsScreen(cartItems: List<DMCartItem>, tips: List<TipItem>) {
             verticalArrangement = Arrangement.Top,
             horizontalAlignment = Alignment.Start
         ) {
-            CartItems(cartItems)
-            ApplyCoupon()
-            TipDeliveryPartner(tipValue = tip, onTipItemClicked = {
-                tip = it
-            }, tips = tips)
-            DeliveryInstructions()
-            BillDetails(190, 34, 0, tip, 259, onAddTipClicked = {
-                tip = 10
-            })
-            ReviewOrderPolicy()
-            SpacerComponent(dimensionResourceId = R.dimen.scroll_view_padding_bottom)
+            if (isExpanded) CartScreenExpandedLayout(cartItems, tip, tips) { tip = it}
+            else CartScreenCompactLayout(cartItems, tip, tips) { tip = it }
         }
     }
+}
+
+@Composable
+fun CartScreenExpandedLayout(
+    cartItems: List<DMCartItem>,
+    tip: Int,
+    tips: List<TipItem>,
+    tipChangedCallback: (Int) -> Unit
+) {
+    Row {
+       Column(modifier = Modifier.fillMaxWidth(.5f).padding(dimensionResource(id = R.dimen.width_medium))) {
+           CartItems(cartItems)
+           DeliveryInstructions()
+           BillDetails(190, 34, 0, tip, 259, onAddTipClicked = {
+               tipChangedCallback(10)
+           })
+       }
+       Column(modifier = Modifier.fillMaxWidth().padding(dimensionResource(id = R.dimen.width_medium))) {
+           ApplyCoupon()
+           TipDeliveryPartner(tipValue = tip, onTipItemClicked = {
+               tipChangedCallback(it)
+           }, tips = tips)
+       }
+    }
+    ReviewOrderPolicy()
+    SpacerComponent(dimensionResourceId = R.dimen.scroll_view_padding_bottom)
+}
+
+@Composable
+private fun CartScreenCompactLayout(
+    cartItems: List<DMCartItem>,
+    tip: Int,
+    tips: List<TipItem>,
+    tipChangedCallback: (Int) -> Unit
+) {
+    CartItems(cartItems)
+    ApplyCoupon()
+    TipDeliveryPartner(tipValue = tip, onTipItemClicked = {
+        tipChangedCallback(it)
+    }, tips = tips)
+    DeliveryInstructions()
+    BillDetails(190, 34, 0, tip, 259, onAddTipClicked = {
+        tipChangedCallback(10)
+    })
+    ReviewOrderPolicy()
+    SpacerComponent(dimensionResourceId = R.dimen.scroll_view_padding_bottom)
 }

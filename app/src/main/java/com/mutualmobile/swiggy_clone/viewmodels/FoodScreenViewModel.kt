@@ -103,6 +103,40 @@ class FoodScreenViewModel : ViewModel() {
       Restaurant(drawableId = R.drawable.rest_bg, isOfferAvailable = true,offerTitle = "20% OFF", offerDescription = "UPTO $50",
         restaurantName = "KS Bakers", restaurantRating = "4.3 30 mins", itemsDescriotion = "Pizza, Burger, pasta", area = "Kukatpally")
     )
+
+    list.add(
+      Restaurant(drawableId = R.drawable.rest_bg, isOfferAvailable = true,offerTitle = "20% OFF", offerDescription = "UPTO $50",
+        restaurantName = "KS Bakers", restaurantRating = "4.3 30 mins", itemsDescriotion = "Pizza, Burger, pasta", area = "Kukatpally")
+    )
+    list.add(
+      Restaurant(drawableId = R.drawable.rest_bg, isOfferAvailable = true,offerTitle = "20% OFF", offerDescription = "UPTO $50",
+        restaurantName = "KS Bakers", restaurantRating = "4.3 30 mins", itemsDescriotion = "Pizza, Burger, pasta", area = "Kukatpally")
+    )
+    list.add(
+      Restaurant(drawableId = R.drawable.rest_bg, isOfferAvailable = true,offerTitle = "20% OFF", offerDescription = "UPTO $50",
+        restaurantName = "KS Bakers", restaurantRating = "4.3 30 mins", itemsDescriotion = "Pizza, Burger, pasta", area = "Kukatpally")
+    )
+    list.add(
+      Restaurant(drawableId = R.drawable.rest_bg, isOfferAvailable = true,offerTitle = "20% OFF", offerDescription = "UPTO $50",
+        restaurantName = "KS Bakers", restaurantRating = "4.3 30 mins", itemsDescriotion = "Pizza, Burger, pasta", area = "Kukatpally")
+    )
+    list.add(
+      Restaurant(drawableId = R.drawable.rest_bg, isOfferAvailable = true,offerTitle = "20% OFF", offerDescription = "UPTO $50",
+        restaurantName = "KS Bakers", restaurantRating = "4.3 30 mins", itemsDescriotion = "Pizza, Burger, pasta", area = "Kukatpally")
+    )
+    list.add(
+      Restaurant(drawableId = R.drawable.rest_bg, isOfferAvailable = true,offerTitle = "20% OFF", offerDescription = "UPTO $50",
+        restaurantName = "KS Bakers", restaurantRating = "4.3 30 mins", itemsDescriotion = "Pizza, Burger, pasta", area = "Kukatpally")
+    )
+    list.add(
+      Restaurant(drawableId = R.drawable.rest_bg, isOfferAvailable = true,offerTitle = "20% OFF", offerDescription = "UPTO $50",
+        restaurantName = "KS Bakers", restaurantRating = "4.3 30 mins", itemsDescriotion = "Pizza, Burger, pasta", area = "Kukatpally")
+    )
+    list.add(
+      Restaurant(drawableId = R.drawable.rest_bg, isOfferAvailable = true,offerTitle = "20% OFF", offerDescription = "UPTO $50",
+        restaurantName = "KS Bakers", restaurantRating = "4.3 30 mins", itemsDescriotion = "Pizza, Burger, pasta", area = "Kukatpally")
+    )
+
     return list
   }
 

@@ -26,11 +26,6 @@ class MainActivity : ComponentActivity() {
         // A surface container using the 'background' color from the theme
         Surface(modifier = Modifier.background(color = Color.Cyan)) {
           Column {
-            TopAppBar(modifier = Modifier.height(80.dp), backgroundColor = Color.White) {
-              ToolBarContent()
-            }
-            getSpacer()
-            SearchButton()
             val foodScreenViewModel: FoodScreenViewModel by viewModels()
             FoodScreen(foodScreenViewModel)
           }

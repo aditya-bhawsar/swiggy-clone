@@ -96,5 +96,6 @@ object Lib {
         private const val ACCOMPANIST_VERSION = "0.25.0"
         const val ACCOMPANIST_PAGER ="com.google.accompanist:accompanist-pager:${ACCOMPANIST_VERSION}"
         const val ACCOMPANIST_IDICATOR ="com.google.accompanist:accompanist-pager-indicators:${ACCOMPANIST_VERSION}"
+        const val ACCOMPANIST_FLOW_LAYOUT = "com.google.accompanist:accompanist-flowlayout:0.26.4-beta"
     }
 }

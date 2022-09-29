@@ -80,7 +80,7 @@ fun ImageCard(
 ) {
   Card(
     modifier = Modifier
-      .fillMaxWidth(0.9f)
+      .width(500.dp)
       .height(250.dp), shape = RoundedCornerShape(16.dp), elevation = 10.dp
   ) {
     Image(

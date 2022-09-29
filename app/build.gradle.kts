@@ -81,6 +81,7 @@ dependencies {
 
     implementation(Lib.Accompanist.ACCOMPANIST_PAGER)
     implementation(Lib.Accompanist.ACCOMPANIST_IDICATOR)
+    implementation(Lib.Accompanist.ACCOMPANIST_FLOW_LAYOUT)
 
     /*DI*/
     implementation(Lib.DI.HILT_ANDROID)

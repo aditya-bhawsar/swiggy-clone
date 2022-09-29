@@ -1,4 +1,4 @@
-package com.mutualmobile.swiggy_clone.ui.screens.food_tab.components
+package com.mutualmobile.swiggy_clone
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

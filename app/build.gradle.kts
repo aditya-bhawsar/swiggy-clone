@@ -63,6 +63,7 @@ dependencies {
     implementation(Lib.Kotlin.KTX_CORE)
     implementation(Lib.Android.COMPOSE_UI)
     implementation(Lib.Android.COMPOSE_MATERIAL)
+    implementation(Lib.Android.COMPOSE_MATERIAL3)
     implementation(Lib.Android.COMPOSE_TOOLING_PREVIEW)
     implementation(Lib.Android.COMPOSE_ACTIVITY)
     implementation(project( ":domain"))
@@ -80,4 +81,7 @@ dependencies {
     implementation(Lib.DI.HILT_NAVIGATION_COMPOSE)
     kapt(Lib.DI.HILT_COMPILER)
     kapt(Lib.DI.HILT_ANDROID_COMPILER)
+
+    implementation ("androidx.constraintlayout:constraintlayout-compose:1.0.1")
+    implementation ("com.google.accompanist:accompanist-systemuicontroller:0.23.1")
 }

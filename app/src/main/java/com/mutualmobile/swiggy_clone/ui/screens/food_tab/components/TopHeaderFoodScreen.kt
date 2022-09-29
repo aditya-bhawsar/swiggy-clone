@@ -1,4 +1,4 @@
-package com.mutualmobile.swiggy_clone
+package com.mutualmobile.swiggy_clone.ui.screens.food_tab.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -20,6 +20,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.mutualmobile.swiggy_clone.R.color
 import com.mutualmobile.swiggy_clone.R.drawable
 
 @Composable
@@ -51,7 +52,7 @@ fun SearchButton() {
         .height(50.dp)
         .background(
           shape = RoundedCornerShape(16.dp), color = colorResource(
-          id = R.color.light_grey
+          id = color.light_grey
         )
         )
         .padding(), verticalAlignment = Alignment.CenterVertically

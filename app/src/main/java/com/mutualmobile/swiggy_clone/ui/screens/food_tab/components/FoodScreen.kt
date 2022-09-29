@@ -1,4 +1,4 @@
-package com.mutualmobile.swiggy_clone
+package com.mutualmobile.swiggy_clone.ui.screens.food_tab.components
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -18,7 +18,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.google.accompanist.flowlayout.FlowRow
-import com.mutualmobile.swiggy_clone.viewmodels.FoodScreenViewModel
+import com.mutualmobile.swiggy_clone.ui.screens.food_tab.FoodScreenViewModel
 
 @Composable
 fun FoodScreen(foodScreenViewModel: FoodScreenViewModel) {

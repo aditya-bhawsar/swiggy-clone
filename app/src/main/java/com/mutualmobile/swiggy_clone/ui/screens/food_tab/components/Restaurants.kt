@@ -1,4 +1,4 @@
-package com.mutualmobile.swiggy_clone
+package com.mutualmobile.swiggy_clone.ui.screens.food_tab.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -18,6 +18,7 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.mutualmobile.swiggy_clone.R.color
 import com.mutualmobile.swiggy_clone.models.Restaurant
 import com.mutualmobile.swiggy_clone.models.TopRatedNearYou
 
@@ -63,7 +64,7 @@ fun RestaurantsItemTexts(restaurant: Restaurant) {
 
 @Composable
 fun OfferData() {
-  Row(modifier = Modifier.background(color = colorResource(id = R.color.light_grey), shape = RoundedCornerShape(8.dp)).padding(4.dp)) {
+  Row(modifier = Modifier.background(color = colorResource(id = color.light_grey), shape = RoundedCornerShape(8.dp)).padding(4.dp)) {
     Column(verticalArrangement = Arrangement.Center) {
       Text(
         text = "EXTRA 10% OFF", fontWeight = FontWeight.Bold, color = Color.Red, fontSize = 14.sp

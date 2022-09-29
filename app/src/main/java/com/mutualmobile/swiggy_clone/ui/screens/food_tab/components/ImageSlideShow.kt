@@ -1,4 +1,4 @@
-package com.mutualmobile.swiggy_clone
+package com.mutualmobile.swiggy_clone.ui.screens.food_tab.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -29,6 +29,7 @@ import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.PagerState
 import com.google.accompanist.pager.rememberPagerState
+import com.mutualmobile.swiggy_clone.R.drawable
 import kotlinx.coroutines.delay
 
 @OptIn(ExperimentalPagerApi::class)
@@ -112,7 +113,7 @@ fun DotsIndicator(
         ) {
 
           Image(
-            painter = getBackgroundImage(R.drawable.rectangle_dark),
+            painter = getBackgroundImage(drawable.rectangle_dark),
             contentDescription = "bg",
             contentScale = ContentScale.FillBounds,
           )
@@ -129,7 +130,7 @@ fun DotsIndicator(
           Image(
             modifier = Modifier
               .size(6.dp),
-            painter = getBackgroundImage(R.drawable.rectangle_dark),
+            painter = getBackgroundImage(drawable.rectangle_dark),
             contentDescription = "bg",
             contentScale = ContentScale.FillBounds
           )

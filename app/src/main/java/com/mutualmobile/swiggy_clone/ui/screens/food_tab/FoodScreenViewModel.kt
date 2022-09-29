@@ -1,4 +1,4 @@
-package com.mutualmobile.swiggy_clone.viewmodels
+package com.mutualmobile.swiggy_clone.ui.screens.food_tab
 
 import androidx.lifecycle.ViewModel
 import com.mutualmobile.swiggy_clone.R

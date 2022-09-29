@@ -1,4 +1,4 @@
-package com.mutualmobile.swiggy_clone
+package com.mutualmobile.swiggy_clone.ui.screens.food_tab.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -26,6 +26,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.content.ContextCompat
 import coil.compose.rememberAsyncImagePainter
+import com.mutualmobile.swiggy_clone.R.color
+import com.mutualmobile.swiggy_clone.R.drawable
 import com.mutualmobile.swiggy_clone.models.TopRatedNearYou
 
 @Composable
@@ -93,10 +95,10 @@ fun OneOfferItem(
 ) {
   Row(
     modifier = Modifier
-      .background(color = Color(R.color.teal_700))
+      .background(color = Color(color.teal_700))
       .padding(4.dp), verticalAlignment = Alignment.CenterVertically
   ) {
-    Image(painter = painterResource(R.drawable.donut), contentDescription = "one_image")
+    Image(painter = painterResource(drawable.donut), contentDescription = "one_image")
     Spacer(
       modifier = Modifier
         .width(4.dp)
@@ -109,7 +111,7 @@ fun OneOfferItem(
 @Composable
 fun FavouriteSymbol() {
   Image(
-    painter = painterResource(R.drawable.ic_baseline_favorite_border_24),
+    painter = painterResource(drawable.ic_baseline_favorite_border_24),
     contentDescription = "fav_icon"
   )
 }

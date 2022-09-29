@@ -1,4 +1,4 @@
-package com.mutualmobile.swiggy_clone
+package com.mutualmobile.swiggy_clone.ui.screens.food_tab
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -9,8 +9,9 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import com.mutualmobile.swiggy_clone.ui.screens.food_tab.components.FoodScreen
 import com.mutualmobile.swiggy_clone.ui.theme.SwiggyCloneTheme
-import com.mutualmobile.swiggy_clone.viewmodels.FoodScreenViewModel
+
 
 class FoodTabActivity : ComponentActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {

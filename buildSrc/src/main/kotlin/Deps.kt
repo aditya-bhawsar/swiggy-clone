@@ -27,6 +27,7 @@ object Lib {
 
         const val COMPOSE_UI = "androidx.compose.ui:ui:${COMPOSE_VERSION}"
         const val COMPOSE_MATERIAL = "androidx.compose.material3:material3:${MATERIAL_DESIGN_VERSION}"
+        const val COMPOSE_MATERIAL_1x = "androidx.compose.material:material:1.3.0-beta03"
         const val COMPOSE_TOOLING_PREVIEW =
             "androidx.compose.ui:ui-tooling-preview:${COMPOSE_VERSION}"
         const val COMPOSE_ACTIVITY =

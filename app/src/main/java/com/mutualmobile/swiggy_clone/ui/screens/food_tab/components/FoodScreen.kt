@@ -10,6 +10,7 @@ import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material.Divider
 import androidx.compose.material.TopAppBar
 import androidx.compose.material3.Text
+import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -21,16 +22,18 @@ import com.google.accompanist.flowlayout.FlowRow
 import com.mutualmobile.swiggy_clone.ui.screens.food_tab.FoodScreenViewModel
 
 @Composable
-fun FoodScreen(foodScreenViewModel: FoodScreenViewModel) {
-  var isSmallScreen = true
+fun FoodScreen(
+  widthSizeClass: WindowWidthSizeClass,
+  foodScreenViewModel: FoodScreenViewModel
+) {
   Column(modifier = Modifier.fillMaxWidth()) {
     TopAppBar(modifier = Modifier.height(80.dp), backgroundColor = Color.White) {
       ToolBarContent()
     }
-    if (isSmallScreen) {
-      SingleScreen(foodScreenViewModel = foodScreenViewModel)
-    } else {
+    if (widthSizeClass == WindowWidthSizeClass.Expanded) {
       MultiScreen(foodScreenViewModel = foodScreenViewModel)
+    } else {
+      SingleScreen(foodScreenViewModel = foodScreenViewModel)
     }
   }
 }

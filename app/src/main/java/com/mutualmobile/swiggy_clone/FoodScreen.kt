@@ -59,8 +59,8 @@ fun FoodScreen(foodScreenViewModel: FoodScreenViewModel) {
 @Composable
 fun HeaderTextView(title: String) {
   Text(
-    modifier = Modifier.padding(top = 8.dp, bottom = 8.dp), text = title,
-    fontWeight = FontWeight.Bold, fontSize = 18.sp, color = Color.DarkGray
+    modifier = Modifier.padding(12.dp), text = title,
+    fontWeight = FontWeight.Bold, fontSize = 15.sp, color = Color.DarkGray
   )
 }
 

@@ -11,7 +11,9 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Card
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
@@ -26,6 +28,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.mutualmobile.swiggy_clone.HeaderTextView
 import com.mutualmobile.swiggy_clone.R
 import com.mutualmobile.swiggy_clone.R.drawable
 import com.mutualmobile.swiggy_clone.getBackgroundImage
@@ -34,14 +37,41 @@ import com.mutualmobile.swiggy_clone.viewmodels.PaymentsViewModel
 
 @Composable
 fun PaymentScreen(paymentsViewModel: PaymentsViewModel) {
+  var isForSmallScreen = false
   Column(modifier = Modifier.background(color = colorResource(id = R.color.payment_backgound))) {
     PaymentToolBar()
-    DeliveryDetails()
-    PreferredPayment()
-    PaymentBanner()
-    AddNewPayment()
-    MorePaymentList(otherPaymentsList = paymentsViewModel.getPaymentsList())
+  if(isForSmallScreen) {
+      Column(modifier = Modifier
+        .verticalScroll(rememberScrollState())
+        .weight(1f, false)) {
+         getTopItems()
+        HeaderTextView(title = "More Payment Options")
+        MorePaymentItems(otherPaymentsList = paymentsViewModel.getPaymentsList())
+      }
+    }else{
+      Row() {
+       Column(modifier = Modifier
+         .verticalScroll(rememberScrollState())
+         .weight(1f, false)) {
+           getTopItems()
+       }
+        Column(modifier = Modifier.weight(1f)) {
+          HeaderTextView(title = "More Payment Options")
+          MorePaymentList(otherPaymentsList = paymentsViewModel.getPaymentsList())
+        }
+
+      }
+    }
   }
+}
+@Composable
+fun getTopItems(){
+  DeliveryDetails()
+  HeaderTextView(title = "Preferred Payment")
+  PreferredPayment()
+  PaymentBanner()
+  HeaderTextView(title = "Credit & Debit Cards")
+  AddNewPayment()
 }
 
 @Composable

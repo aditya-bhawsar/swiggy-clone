@@ -39,6 +39,24 @@ fun MorePaymentList(otherPaymentsList: List<OtherPayment>) {
 }
 
 @Composable
+fun MorePaymentItems(otherPaymentsList: List<OtherPayment>) {
+  Column(
+    modifier = Modifier
+      .padding(start = 16.dp, end = 16.dp, top = 8.dp, bottom = 8.dp)
+  ) {
+    Card(
+      shape = RoundedCornerShape(16.dp), elevation = 10.dp
+    ) {
+      Column() {
+        for(item in otherPaymentsList){
+          MorePaymentsListItem(item)
+        }
+      }
+    }
+  }
+}
+
+@Composable
 fun MorePaymentsListItem(payment: OtherPayment) {
   Column(
     modifier = Modifier

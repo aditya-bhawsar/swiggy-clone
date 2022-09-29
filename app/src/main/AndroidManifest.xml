@@ -4,7 +4,7 @@
     package="com.mutualmobile.swiggy_clone">
 
     <application
-        android:name=".SwiggyApp"
+        android:name=".ui.screens.food_tab.components.SwiggyApp"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -15,7 +15,7 @@
         android:theme="@style/Theme.SwiggyClone"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.SwiggyClone">
@@ -25,6 +25,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+      <activity
+          android:name=".ui.screens.food_tab.FoodTabActivity"
+          android:exported="false">
+      </activity>
     </application>
 
 </manifest>

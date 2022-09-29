@@ -81,7 +81,9 @@ dependencies {
 
     implementation(Lib.Accompanist.ACCOMPANIST_PAGER)
     implementation(Lib.Accompanist.ACCOMPANIST_IDICATOR)
+    implementation(Lib.Accompanist.ACCOMPANIST_FLOW_LAYOUT)
 
+    implementation("androidx.compose.material3:material3-window-size-class:1.0.0-beta01")
     /*DI*/
     implementation(Lib.DI.HILT_ANDROID)
     implementation(Lib.DI.HILT_NAVIGATION_COMPOSE)

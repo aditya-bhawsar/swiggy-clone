@@ -28,7 +28,7 @@ import com.mutualmobile.swiggy_clone.navigator.SwiggyScreen
 
 @Composable
 fun ToolBarContent() {
-  Row(modifier = Modifier.padding(16.dp), verticalAlignment = Alignment.CenterVertically) {
+  Row(modifier = Modifier.padding(8.dp), verticalAlignment = Alignment.CenterVertically) {
     Column(modifier = Modifier.weight(1f)) {
       Row() {
         Image(
@@ -51,6 +51,7 @@ fun SearchButton(composeNavigator: ComposeNavigator) {
   Column(modifier = Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
     Row(
       modifier = Modifier
+        .width(500.dp)
         .height(50.dp)
         .background(
           shape = RoundedCornerShape(16.dp), color = colorResource(

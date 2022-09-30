@@ -100,7 +100,7 @@ class FoodScreenViewModel @Inject constructor() : ViewModel() {
     )
     list.add(
       Restaurant(drawableId = R.drawable.rest_7, isOfferAvailable = true,offerTitle = "20% OFF", offerDescription = "UPTO $50",
-        restaurantName = "Chaithanya Food Court", restaurantRating = "4.3 30 mins", itemsDescriotion = "Biryani, Cheese, Andhra food", area = "Kukatpally")
+        restaurantName = "Chaithanya Food Court", restaurantRating = "4.3 30 mins", itemsDescriotion = "Biryani, Andhra food", area = "Kukatpally")
     )
     list.add(
       Restaurant(drawableId = R.drawable.rest_4, isOfferAvailable = true,offerTitle = "20% OFF", offerDescription = "UPTO $50",
@@ -121,7 +121,7 @@ class FoodScreenViewModel @Inject constructor() : ViewModel() {
     )
     list.add(
       Restaurant(drawableId = R.drawable.rest_7, isOfferAvailable = true,offerTitle = "20% OFF", offerDescription = "UPTO $50",
-        restaurantName = "Chaithanya Food Court", restaurantRating = "4.3 30 mins", itemsDescriotion = "Biryani, Cheese, Andhra food", area = "Kukatpally")
+        restaurantName = "Chaithanya Food Court", restaurantRating = "4.3 30 mins", itemsDescriotion = "Biryani, Andhra food", area = "Kukatpally")
     )
     list.add(
       Restaurant(drawableId = R.drawable.rest_3, isOfferAvailable = true,offerTitle = "20% OFF", offerDescription = "UPTO $50",

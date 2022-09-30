@@ -11,6 +11,7 @@ import com.mutualmobile.swiggy_clone.navigator.SwiggyScreen
 import com.mutualmobile.swiggy_clone.ui.screens.cart.CartScreen
 import com.mutualmobile.swiggy_clone.ui.screens.coupon.ApplyCouponScreen
 import com.mutualmobile.swiggy_clone.ui.screens.food.FoodScreen
+import com.mutualmobile.swiggy_clone.ui.screens.payment.PaymentScreen
 import com.mutualmobile.swiggy_clone.ui.screens.search.SearchScreen
 import com.mutualmobile.swiggy_clone.ui.screens.splash.SplashScreen
 
@@ -22,6 +23,11 @@ fun NavGraphBuilder.orderRoute(
         startDestination = SwiggyScreen.Splash.name,
         route = SwiggyRoute.Order.name
     ) {
+        composable(SwiggyScreen.Payment.name){
+            PaymentScreen(widthSizeClass, composeNavigator = composeNavigator){
+                composeNavigator.popUpTo(SwiggyScreen.Payment.name, false)
+            }
+        }
         composable(SwiggyScreen.Splash.name){
             SplashScreen {
                 composeNavigator.navigate(SwiggyScreen.Food.route)

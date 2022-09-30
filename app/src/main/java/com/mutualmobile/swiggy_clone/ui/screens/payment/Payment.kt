@@ -1,4 +1,4 @@
-package com.mutualmobile.swiggy_clone.payments
+package com.mutualmobile.swiggy_clone.ui.screens.payment
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -30,17 +30,24 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.mutualmobile.swiggy_clone.R
 import com.mutualmobile.swiggy_clone.R.drawable
 import com.mutualmobile.swiggy_clone.common.composable.HeaderTextView
 import com.mutualmobile.swiggy_clone.common.composable.getBackgroundImage
 import com.mutualmobile.swiggy_clone.common.composable.getDivider
-import com.mutualmobile.swiggy_clone.ui.screens.payment.PaymentsViewModel
+import com.mutualmobile.swiggy_clone.navigator.ComposeNavigator
+import com.mutualmobile.swiggy_clone.payments.AddNewPayment
+import com.mutualmobile.swiggy_clone.payments.DeliveryDetails
+import com.mutualmobile.swiggy_clone.payments.MorePaymentItems
+import com.mutualmobile.swiggy_clone.payments.MorePaymentList
 
 @Composable
 fun PaymentScreen(
   widthSizeClass: WindowWidthSizeClass,
-  paymentsViewModel: PaymentsViewModel, onBackPressed: () ->Unit
+  paymentsViewModel: PaymentsViewModel = hiltViewModel(),
+  composeNavigator: ComposeNavigator,
+  onBackPressed: () -> Unit,
 ) {
 
   Column(modifier = Modifier.background(color = colorResource(id = R.color.payment_backgound))) {

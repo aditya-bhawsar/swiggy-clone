@@ -15,6 +15,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.mutualmobile.swiggy_clone.R
+import com.mutualmobile.swiggy_clone.ui.screens.payment.getRightIcon
 
 @Composable
 fun DeliveryDetails() {

@@ -1,4 +1,4 @@
-package com.mutualmobile.swiggy_clone.ui.screens.food_tab
+package com.mutualmobile.swiggy_clone.ui.screens.food
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -11,8 +11,6 @@ import androidx.compose.material3.windowsizeclass.ExperimentalMaterial3WindowSiz
 import androidx.compose.material3.windowsizeclass.calculateWindowSizeClass
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import com.mutualmobile.swiggy_clone.ui.screens.cart.CartScreen
-import com.mutualmobile.swiggy_clone.ui.screens.food_tab.components.FoodScreen
 import com.mutualmobile.swiggy_clone.ui.theme.SwiggyCloneTheme
 
 

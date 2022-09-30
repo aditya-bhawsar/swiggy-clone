@@ -1,4 +1,4 @@
-package com.mutualmobile.swiggy_clone.ui.screens.food_tab.components
+package com.mutualmobile.swiggy_clone.ui.screens.food
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -16,7 +16,13 @@ import androidx.compose.ui.unit.dp
 import com.google.accompanist.flowlayout.FlowRow
 import com.mutualmobile.swiggy_clone.common.composable.HeaderTextView
 import com.mutualmobile.swiggy_clone.common.composable.getSpacer
-import com.mutualmobile.swiggy_clone.ui.screens.food_tab.FoodScreenViewModel
+import com.mutualmobile.swiggy_clone.ui.screens.food.components.ImageSlideShow
+import com.mutualmobile.swiggy_clone.ui.screens.food.components.OfferAndGuilt
+import com.mutualmobile.swiggy_clone.ui.screens.food.components.RestaurantsItem
+import com.mutualmobile.swiggy_clone.ui.screens.food.components.SearchButton
+import com.mutualmobile.swiggy_clone.ui.screens.food.components.ToolBarContent
+import com.mutualmobile.swiggy_clone.ui.screens.food.components.TopRatedList
+import com.mutualmobile.swiggy_clone.ui.screens.food.components.WhatOnYourMindList
 
 @Composable
 fun FoodScreen(

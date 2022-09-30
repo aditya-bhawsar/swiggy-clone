@@ -1,7 +1,9 @@
 package com.mutualmobile.swiggy_clone.ui.screens.cart.components
 
+import android.annotation.SuppressLint
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
@@ -13,7 +15,6 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
-import androidx.compose.material3.rememberScaffoldState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -21,6 +22,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.dimensionResource
 import com.mutualmobile.swiggy_clone.R
 import com.mutualmobile.swiggy_clone.common.composable.BackButton
@@ -31,6 +33,7 @@ import com.mutualmobile.swiggy_clone.navigator.ComposeNavigator
 import com.mutualmobile.swiggy_clone.navigator.SwiggyScreen
 import com.mutualmobile.swiggy_clone.ui.theme.SwiggyBackgroundColor
 
+@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CartItemsScreen(
@@ -40,21 +43,20 @@ fun CartItemsScreen(
     composeNavigator: ComposeNavigator
 ) {
 
-    val scaffoldState = rememberScaffoldState()
-
     var tip by remember { mutableStateOf(0) }
 
-    Scaffold(scaffoldState = scaffoldState,
+    Scaffold(
         topBar = {
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
+                    .background(Color.White)
                     .height(dimensionResource(id = R.dimen.app_bar_height)),
                 horizontalArrangement = Arrangement.Start,
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                BackButton {
-
+                Box(modifier = Modifier.padding(8.dp)){
+                    BackButton {}
                 }
                 SpacerComponent(dimensionResourceId = R.dimen.width_medium, isVertical = false)
                 Text(text = "Hotel Empire")
@@ -71,7 +73,7 @@ fun CartItemsScreen(
                 .fillMaxHeight()
                 .verticalScroll(rememberScrollState())
                 .background(SwiggyBackgroundColor)
-                .padding(dimensionResource(id = R.dimen.padding_large)),
+                .padding(it),
             verticalArrangement = Arrangement.Top,
             horizontalAlignment = Alignment.Start
         ) {
@@ -89,27 +91,24 @@ fun CartScreenExpandedLayout(
     tipChangedCallback: (Int) -> Unit
 ) {
     Row {
-        Column(
-            modifier = Modifier
-                .fillMaxWidth(.5f)
-                .padding(dimensionResource(id = R.dimen.width_medium))
-        ) {
-            CartItems(cartItems)
-            DeliveryInstructions()
-            BillDetails(190, 34, 0, tip, 259, onAddTipClicked = {
-                tipChangedCallback(10)
-            })
-        }
-        Column(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(dimensionResource(id = R.dimen.width_medium))
-        ) {
-            ApplyCoupon()
-            TipDeliveryPartner(tipValue = tip, onTipItemClicked = {
-                tipChangedCallback(it)
-            }, tips = tips)
-        }
+       Column(modifier = Modifier
+           .fillMaxWidth(.5f)
+           .padding(dimensionResource(id = R.dimen.width_medium))) {
+           CartItems(cartItems)
+           DeliveryInstructions()
+           BillDetails(190, 34, 0, tip, 259, onAddTipClicked = {
+               tipChangedCallback(10)
+           })
+       }
+       Column(modifier = Modifier
+           .fillMaxWidth()
+           .padding(dimensionResource(id = R.dimen.width_medium))) {
+           ApplyCoupon()
+           TipDeliveryPartner(tipValue = tip, onTipItemClicked = {
+               tipChangedCallback(it)
+           }, tips = tips)
+       }
+
     }
     ReviewOrderPolicy()
     SpacerComponent(dimensionResourceId = R.dimen.scroll_view_padding_bottom)

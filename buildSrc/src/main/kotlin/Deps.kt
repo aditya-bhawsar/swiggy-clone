@@ -41,6 +41,12 @@ object Lib {
             "androidx.navigation:navigation-compose:${COMPOSE_NAVIGATION_VERSION}"
         const val APP_COMPAT = "androidx.appcompat:appcompat:1.3.0-beta01"
         const val MATERIAL_API = "com.google.android.material:material:1.6.1"
+        const val MATERIAL3_WINDOW = "androidx.compose.material3:material3-window-size-class:1.0.0-beta01"
+        const val COMPOSE_CONSTRAINT = "androidx.constraintlayout:constraintlayout-compose:1.0.1"
+
+    }
+    object Rating{
+        const val RATING_LIB= "com.github.a914-gowtham:compose-ratingbar:1.2.3"
     }
 
     object Room {
@@ -100,5 +106,6 @@ object Lib {
         const val ACCOMPANIST_PAGER ="com.google.accompanist:accompanist-pager:${ACCOMPANIST_VERSION}"
         const val ACCOMPANIST_IDICATOR ="com.google.accompanist:accompanist-pager-indicators:${ACCOMPANIST_VERSION}"
         const val ACCOMPANIST_FLOW_LAYOUT = "com.google.accompanist:accompanist-flowlayout:0.26.4-beta"
+        const val ACCOMPANIST_SYSTEM_UI_CONTROLLER = "com.google.accompanist:accompanist-systemuicontroller:0.23.1"
     }
 }

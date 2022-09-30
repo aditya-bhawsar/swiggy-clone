@@ -75,9 +75,13 @@ dependencies {
     androidTestImplementation(Lib.Test.COMPOSE_TEST_JUNIT)
     debugImplementation(Lib.Android.COMPOSE_TOOLING)
     debugImplementation(Lib.Android.COMPOSE_MANIFEST)
-    implementation("androidx.compose.material3:material3-window-size-class:1.0.0-beta03")
+    implementation(Lib.Android.MATERIAL3_WINDOW)
+    implementation (Lib.Android.COMPOSE_CONSTRAINT)
+    implementation(Lib.Android.MATERIAL_API)
+    
+    implementation (Lib.Accompanist.ACCOMPANIST_SYSTEM_UI_CONTROLLER)
 
-     implementation(Lib.Android.MATERIAL_API)
+
     /*COIL*/
     implementation(Lib.Coil.COIL_LIB)
 
@@ -92,8 +96,7 @@ dependencies {
     kapt(Lib.DI.HILT_COMPILER)
     kapt(Lib.DI.HILT_ANDROID_COMPILER)
 
-    implementation ("com.github.a914-gowtham:compose-ratingbar:1.2.3")
+    implementation (Lib.Rating.RATING_LIB)
 
-    implementation ("androidx.constraintlayout:constraintlayout-compose:1.0.1")
-    implementation ("com.google.accompanist:accompanist-systemuicontroller:0.23.1")
+
 }

@@ -14,6 +14,7 @@ sealed class SwiggyScreen(
     object ApplyCoupon: SwiggyScreen("coupon")
     object Food: SwiggyScreen("food")
     object Splash: SwiggyScreen("splash")
+    object Payment: SwiggyScreen("pay")
 }
 
 sealed class SwiggyRoute(val name: String) {

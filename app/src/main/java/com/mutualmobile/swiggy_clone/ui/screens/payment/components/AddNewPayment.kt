@@ -22,6 +22,7 @@ import androidx.compose.ui.unit.sp
 import com.mutualmobile.swiggy_clone.R
 import com.mutualmobile.swiggy_clone.common.composable.BackgroundImagePainter
 import com.mutualmobile.swiggy_clone.common.composable.HeightSpacer
+import com.mutualmobile.swiggy_clone.ui.screens.payment.PaymentImage
 
 @Composable
 fun AddNewPayment() {

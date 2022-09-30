@@ -67,7 +67,7 @@ fun CartItemsScreen(
         },
         bottomBar = {
             BottomBar(onProceedClicked = {
-                composeNavigator.navigate(SwiggyScreen.Confirm.route)
+                composeNavigator.navigate(SwiggyScreen.Payment.name)
             }, price = "259", onViewDetailsClicked = {})
         }) {
         Column(
@@ -126,15 +126,18 @@ private fun CartScreenCompactLayout(
     composeNavigator: ComposeNavigator,
     tipChangedCallback: (Int) -> Unit
 ) {
-    CartItems(cartItems)
-    ApplyCoupon(composeNavigator = composeNavigator)
-    TipDeliveryPartner(tipValue = tip, onTipItemClicked = {
-        tipChangedCallback(it)
-    }, tips = tips)
-    DeliveryInstructions()
-    BillDetails(190, 34, 0, tip, 259, onAddTipClicked = {
-        tipChangedCallback(10)
-    })
-    ReviewOrderPolicy()
-    SpacerComponent(dimensionResourceId = R.dimen.scroll_view_padding_bottom)
+    Column(Modifier.fillMaxWidth().padding(8.dp)) {
+        CartItems(cartItems)
+        ApplyCoupon(composeNavigator = composeNavigator)
+        TipDeliveryPartner(tipValue = tip, onTipItemClicked = {
+            tipChangedCallback(it)
+        }, tips = tips)
+        DeliveryInstructions()
+        BillDetails(190, 34, 0, tip, 259, onAddTipClicked = {
+            tipChangedCallback(10)
+        })
+        ReviewOrderPolicy()
+        SpacerComponent(dimensionResourceId = R.dimen.scroll_view_padding_bottom)
+    }
+
 }

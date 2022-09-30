@@ -1,4 +1,4 @@
-package com.mutualmobile.swiggy_clone.payments
+package com.mutualmobile.swiggy_clone.ui.screens.payment
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -30,16 +31,24 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.mutualmobile.swiggy_clone.R
 import com.mutualmobile.swiggy_clone.R.drawable
 import com.mutualmobile.swiggy_clone.common.composable.HeaderTextView
+import com.mutualmobile.swiggy_clone.navigator.ComposeNavigator
+import com.mutualmobile.swiggy_clone.navigator.SwiggyScreen
+import com.mutualmobile.swiggy_clone.payments.AddNewPayment
+import com.mutualmobile.swiggy_clone.payments.DeliveryDetails
+import com.mutualmobile.swiggy_clone.payments.MorePaymentItems
+import com.mutualmobile.swiggy_clone.payments.MorePaymentList
 import com.mutualmobile.swiggy_clone.common.composable.BackgroundImagePainter
-import com.mutualmobile.swiggy_clone.ui.screens.payment.PaymentsViewModel
 
 @Composable
 fun PaymentScreen(
   widthSizeClass: WindowWidthSizeClass,
-  paymentsViewModel: PaymentsViewModel, onBackPressed: () ->Unit
+  paymentsViewModel: PaymentsViewModel = hiltViewModel(),
+  composeNavigator: ComposeNavigator,
+  onBackPressed: () -> Unit,
 ) {
 
   Column(modifier = Modifier.background(color = colorResource(id = R.color.payment_backgound))) {
@@ -50,18 +59,18 @@ fun PaymentScreen(
           .verticalScroll(rememberScrollState())
           .weight(1f, false)
       ) {
-        getTopItems()
+        getTopItems(composeNavigator = composeNavigator)
         HeaderTextView(title = "More Payment Options")
         MorePaymentItems(otherPaymentsList = paymentsViewModel.getPaymentsList())
       }
     } else {
-      Row() {
+      Row(Modifier.fillMaxHeight().fillMaxWidth()) {
         Column(
           modifier = Modifier
             .verticalScroll(rememberScrollState())
             .weight(1f, false)
         ) {
-          getTopItems()
+          getTopItems(composeNavigator)
         }
         Column(modifier = Modifier.weight(1f)) {
           HeaderTextView(title = "More Payment Options")
@@ -74,17 +83,17 @@ fun PaymentScreen(
 }
 
 @Composable
-fun getTopItems() {
+fun getTopItems(composeNavigator: ComposeNavigator) {
   DeliveryDetails()
   HeaderTextView(title = "Preferred Payment")
-  PreferredPayment()
+  PreferredPayment(composeNavigator = composeNavigator)
   PaymentBanner()
   HeaderTextView(title = "Credit & Debit Cards")
   AddNewPayment()
 }
 
 @Composable
-fun PreferredPayment() {
+fun PreferredPayment(composeNavigator: ComposeNavigator) {
   Card(
     modifier = Modifier.padding(start = 16.dp, end = 16.dp, top = 8.dp, bottom = 8.dp),
     shape = RoundedCornerShape(16.dp), elevation = 10.dp
@@ -103,7 +112,7 @@ fun PreferredPayment() {
           Spacer(modifier = Modifier.width(4.dp))
           getRightIcon(drawable.check_circle_24, 20.dp)
         }
-        getPreferredPaymentButton()
+        getPreferredPaymentButton(composeNavigator = composeNavigator)
       }
     }
   }
@@ -132,10 +141,11 @@ fun PaymentToolBar(onBackPressed: () -> Unit) {
 }
 
 @Composable
-fun getPreferredPaymentButton() {
+fun getPreferredPaymentButton(composeNavigator: ComposeNavigator) {
   Box(
     modifier = Modifier
       .height(40.dp)
+      .clickable { composeNavigator.navigate(SwiggyScreen.Confirm.name) }
       .padding(start = 32.dp, end = 32.dp), contentAlignment = Alignment.Center
   ) {
     Image(

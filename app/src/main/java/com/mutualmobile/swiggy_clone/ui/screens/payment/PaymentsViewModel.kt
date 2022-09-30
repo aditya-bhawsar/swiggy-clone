@@ -2,8 +2,11 @@ package com.mutualmobile.swiggy_clone.ui.screens.payment
 import androidx.lifecycle.ViewModel
 import com.mutualmobile.swiggy_clone.R
 import com.mutualmobile.swiggy_clone.models.OtherPayment
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class PaymentsViewModel :  ViewModel(){
+@HiltViewModel
+class PaymentsViewModel @Inject constructor() :  ViewModel(){
 
   fun getPaymentsList(): MutableList<OtherPayment> {
     val list = mutableListOf<OtherPayment>()

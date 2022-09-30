@@ -13,6 +13,7 @@ import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ShoppingCart
 import androidx.compose.material3.*
+import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -41,7 +42,8 @@ import com.mutualmobile.swiggy_clone.ui.theme.Spacing
 @Composable
 fun ShopDetailsScreen(
   viewModel: ShopDetailsVM = hiltViewModel(),
-  composeNavigator: ComposeNavigator
+  composeNavigator: ComposeNavigator,
+  widthSizeClass: WindowWidthSizeClass
 ) {
 
   var itemAdded by remember {
@@ -209,7 +211,6 @@ fun ItemImage(item: FoodItemModel, itemAddedCallback: () -> Unit) {
     )
     AddButton(item, itemAddedCallback)
   }
-
 }
 
 @Composable

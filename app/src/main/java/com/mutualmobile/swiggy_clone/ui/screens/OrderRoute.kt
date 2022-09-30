@@ -25,7 +25,7 @@ fun NavGraphBuilder.orderRoute(
         route = SwiggyRoute.Order.name
     ) {
         composable(SwiggyScreen.Menu.name){
-            ShopDetailsScreen(composeNavigator = composeNavigator)
+            ShopDetailsScreen(widthSizeClass = widthSizeClass  ,composeNavigator = composeNavigator)
         }
         composable(SwiggyScreen.Payment.name){
             PaymentScreen(widthSizeClass, composeNavigator = composeNavigator){

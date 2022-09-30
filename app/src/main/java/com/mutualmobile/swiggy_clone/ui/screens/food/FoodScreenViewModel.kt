@@ -5,8 +5,11 @@ import com.mutualmobile.swiggy_clone.R
 import com.mutualmobile.swiggy_clone.models.Restaurant
 import com.mutualmobile.swiggy_clone.models.TopRatedNearYou
 import com.mutualmobile.swiggy_clone.models.WhatsOnMind
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class FoodScreenViewModel : ViewModel() {
+@HiltViewModel
+class FoodScreenViewModel @Inject constructor() : ViewModel() {
 
   fun getTopRatedList(): MutableList<TopRatedNearYou> {
     val list = mutableListOf<TopRatedNearYou>()

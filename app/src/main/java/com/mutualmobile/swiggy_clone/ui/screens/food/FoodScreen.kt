@@ -13,9 +13,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.google.accompanist.flowlayout.FlowRow
 import com.mutualmobile.swiggy_clone.common.composable.HeaderTextView
 import com.mutualmobile.swiggy_clone.common.composable.getSpacer
+import com.mutualmobile.swiggy_clone.navigator.ComposeNavigator
 import com.mutualmobile.swiggy_clone.ui.screens.food.components.ImageSlideShow
 import com.mutualmobile.swiggy_clone.ui.screens.food.components.OfferAndGuilt
 import com.mutualmobile.swiggy_clone.ui.screens.food.components.RestaurantsItem
@@ -27,26 +29,27 @@ import com.mutualmobile.swiggy_clone.ui.screens.food.components.WhatOnYourMindLi
 @Composable
 fun FoodScreen(
   widthSizeClass: WindowWidthSizeClass,
-  foodScreenViewModel: FoodScreenViewModel
+  foodScreenViewModel: FoodScreenViewModel = hiltViewModel(),
+  composeNavigator: ComposeNavigator
 ) {
   Column(modifier = Modifier.fillMaxWidth()) {
     TopAppBar(modifier = Modifier.height(80.dp), backgroundColor = Color.White) {
       ToolBarContent()
     }
     if (widthSizeClass == WindowWidthSizeClass.Expanded) {
-      MultiScreen(foodScreenViewModel = foodScreenViewModel)
+      MultiScreen(foodScreenViewModel = foodScreenViewModel, composeNavigator = composeNavigator)
     } else {
-      SingleScreen(foodScreenViewModel = foodScreenViewModel)
+      SingleScreen(foodScreenViewModel = foodScreenViewModel, composeNavigator = composeNavigator)
     }
   }
 }
 
 @Composable
-fun SingleScreen(foodScreenViewModel: FoodScreenViewModel) {
+fun SingleScreen(foodScreenViewModel: FoodScreenViewModel, composeNavigator: ComposeNavigator) {
   LazyColumn(state = rememberLazyListState()) {
     item {
       Column(modifier = Modifier.padding(16.dp)) {
-        TopItems(foodScreenViewModel = foodScreenViewModel)
+        TopItems(foodScreenViewModel, composeNavigator)
         getSpacer()
         HeaderTextView(
           title = foodScreenViewModel.getRestaurantsList().size.toString() + " Restaurants to explore"
@@ -55,18 +58,18 @@ fun SingleScreen(foodScreenViewModel: FoodScreenViewModel) {
     }
     items(foodScreenViewModel.getRestaurantsList().size) { index ->
       Column(modifier = Modifier.padding(start = 16.dp)) {
-        RestaurantsItem(foodScreenViewModel.getRestaurantsList().get(index))
+        RestaurantsItem(foodScreenViewModel.getRestaurantsList()[index])
       }
     }
   }
 }
 
 @Composable
-fun MultiScreen(foodScreenViewModel: FoodScreenViewModel) {
+fun MultiScreen(foodScreenViewModel: FoodScreenViewModel, composeNavigator: ComposeNavigator) {
   Column(modifier = Modifier.padding(16.dp)) {
     LazyColumn {
       item {
-        TopItems(foodScreenViewModel)
+        TopItems(foodScreenViewModel, composeNavigator)
         HeaderTextView(
           title = foodScreenViewModel.getRestaurantsList().size.toString() + " Restaurants to explore"
         )
@@ -84,15 +87,15 @@ fun MultiScreen(foodScreenViewModel: FoodScreenViewModel) {
 internal fun GridContent(foodScreenViewModel: FoodScreenViewModel) {
   repeat(foodScreenViewModel.getRestaurantsList().size) { index ->
     Column(modifier = Modifier.padding(4.dp), horizontalAlignment = Alignment.CenterHorizontally) {
-      RestaurantsItem(foodScreenViewModel.getRestaurantsList().get(index))
+      RestaurantsItem(foodScreenViewModel.getRestaurantsList()[index])
     }
   }
 }
 
 @Composable
-fun TopItems(foodScreenViewModel: FoodScreenViewModel) {
+fun TopItems(foodScreenViewModel: FoodScreenViewModel, composeNavigator: ComposeNavigator) {
   getSpacer()
-  SearchButton()
+  SearchButton(composeNavigator = composeNavigator)
   getSpacer()
   OfferAndGuilt()
   getSpacer()

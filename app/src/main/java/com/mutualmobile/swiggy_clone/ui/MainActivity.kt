@@ -10,9 +10,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import com.mutualmobile.swiggy_clone.navigator.ComposeNavigator
 import com.mutualmobile.swiggy_clone.navigator.SwiggyRoute
-import com.mutualmobile.swiggy_clone.ui.screens.dashboardRoute
-import com.mutualmobile.swiggy_clone.ui.screens.coupon.ApplyCouponScreen
-import com.mutualmobile.swiggy_clone.ui.screens.search.SearchScreen
+import com.mutualmobile.swiggy_clone.ui.screens.orderRoute
 import com.mutualmobile.swiggy_clone.ui.theme.SwiggyCloneTheme
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -39,7 +37,7 @@ class MainActivity : ComponentActivity() {
           navController = navController,
           startDestination = SwiggyRoute.Order.name,
         ) {
-          dashboardRoute(composeNavigator, widthSizeClass)
+          orderRoute(composeNavigator, widthSizeClass)
         }
       }
     }

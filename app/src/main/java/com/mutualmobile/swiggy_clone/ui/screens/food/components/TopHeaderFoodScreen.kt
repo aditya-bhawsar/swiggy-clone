@@ -2,6 +2,7 @@ package com.mutualmobile.swiggy_clone.ui.screens.food.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -22,6 +23,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.mutualmobile.swiggy_clone.R.color
 import com.mutualmobile.swiggy_clone.R.drawable
+import com.mutualmobile.swiggy_clone.navigator.ComposeNavigator
+import com.mutualmobile.swiggy_clone.navigator.SwiggyScreen
 
 @Composable
 fun ToolBarContent() {
@@ -43,7 +46,7 @@ fun ToolBarContent() {
 }
 
 @Composable
-fun SearchButton() {
+fun SearchButton(composeNavigator: ComposeNavigator) {
 
   Column(modifier = Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
     Row(
@@ -52,8 +55,7 @@ fun SearchButton() {
         .background(
           shape = RoundedCornerShape(16.dp), color = colorResource(
           id = color.light_grey
-        )
-        )
+        )).clickable { composeNavigator.navigate(SwiggyScreen.Search.name) }
         .padding(), verticalAlignment = Alignment.CenterVertically
     ) {
       Text(

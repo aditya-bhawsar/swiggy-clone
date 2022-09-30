@@ -57,7 +57,9 @@ fun CartItemsScreen(
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Box(modifier = Modifier.padding(8.dp)){
-                    BackButton {}
+                    BackButton {
+                        composeNavigator.popUpTo(SwiggyScreen.Food.name, inclusive = false)
+                    }
                 }
                 SpacerComponent(dimensionResourceId = R.dimen.width_medium, isVertical = false)
                 Text(text = "Hotel Empire")
@@ -78,8 +80,8 @@ fun CartItemsScreen(
             verticalArrangement = Arrangement.Top,
             horizontalAlignment = Alignment.Start
         ) {
-            if (isExpanded) CartScreenExpandedLayout(cartItems, tip, tips) { tip = it }
-            else CartScreenCompactLayout(cartItems, tip, tips) { tip = it }
+            if (isExpanded) CartScreenExpandedLayout(cartItems, tip, tips, composeNavigator) { tip = it }
+            else CartScreenCompactLayout(cartItems, tip, tips,composeNavigator) { tip = it }
         }
     }
 }
@@ -89,7 +91,8 @@ fun CartScreenExpandedLayout(
     cartItems: List<DMCartItem>,
     tip: Int,
     tips: List<TipItem>,
-    tipChangedCallback: (Int) -> Unit
+    composeNavigator: ComposeNavigator,
+    tipChangedCallback: (Int) -> Unit,
 ) {
     Row {
        Column(modifier = Modifier
@@ -104,7 +107,7 @@ fun CartScreenExpandedLayout(
        Column(modifier = Modifier
            .fillMaxWidth()
            .padding(dimensionResource(id = R.dimen.width_medium))) {
-           ApplyCoupon()
+           ApplyCoupon(composeNavigator)
            TipDeliveryPartner(tipValue = tip, onTipItemClicked = {
                tipChangedCallback(it)
            }, tips = tips)
@@ -120,10 +123,11 @@ private fun CartScreenCompactLayout(
     cartItems: List<DMCartItem>,
     tip: Int,
     tips: List<TipItem>,
+    composeNavigator: ComposeNavigator,
     tipChangedCallback: (Int) -> Unit
 ) {
     CartItems(cartItems)
-    ApplyCoupon()
+    ApplyCoupon(composeNavigator = composeNavigator)
     TipDeliveryPartner(tipValue = tip, onTipItemClicked = {
         tipChangedCallback(it)
     }, tips = tips)

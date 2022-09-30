@@ -59,7 +59,7 @@ fun PaymentScreen(
           .verticalScroll(rememberScrollState())
           .weight(1f, false)
       ) {
-        getTopItems(composeNavigator = composeNavigator)
+        TopItems(composeNavigator = composeNavigator)
         HeaderTextView(title = "More Payment Options")
         MorePaymentItems(otherPaymentsList = paymentsViewModel.getPaymentsList())
       }
@@ -70,7 +70,7 @@ fun PaymentScreen(
             .verticalScroll(rememberScrollState())
             .weight(1f, false)
         ) {
-          getTopItems(composeNavigator)
+          TopItems(composeNavigator)
         }
         Column(modifier = Modifier.weight(1f)) {
           HeaderTextView(title = "More Payment Options")
@@ -83,7 +83,7 @@ fun PaymentScreen(
 }
 
 @Composable
-fun getTopItems(composeNavigator: ComposeNavigator) {
+fun TopItems(composeNavigator: ComposeNavigator) {
   DeliveryDetails()
   HeaderTextView(title = "Preferred Payment")
   PreferredPayment(composeNavigator = composeNavigator)
@@ -110,9 +110,9 @@ fun PreferredPayment(composeNavigator: ComposeNavigator) {
             fontSize = 14.sp, maxLines = 1, overflow = TextOverflow.Ellipsis, color = Color.DarkGray
           )
           Spacer(modifier = Modifier.width(4.dp))
-          getRightIcon(drawable.check_circle_24, 20.dp)
+          RightIcon(drawable.check_circle_24, 20.dp)
         }
-        getPreferredPaymentButton(composeNavigator = composeNavigator)
+        PreferredPaymentButton(composeNavigator = composeNavigator)
       }
     }
   }
@@ -123,7 +123,7 @@ fun PaymentToolBar(onBackPressed: () -> Unit) {
   TopAppBar(modifier = Modifier.height(60.dp), backgroundColor = Color.White) {
     Column() {
       Row(modifier = Modifier.padding(8.dp), verticalAlignment = Alignment.CenterVertically) {
-        getRightIcon(drawableId = drawable.back_arrow_24, size = 24.dp,onBackPressed)
+        RightIcon(drawableId = drawable.back_arrow_24, size = 24.dp,onBackPressed)
         Spacer(modifier = Modifier.width(8.dp))
         Column() {
           Text(
@@ -141,7 +141,7 @@ fun PaymentToolBar(onBackPressed: () -> Unit) {
 }
 
 @Composable
-fun getPreferredPaymentButton(composeNavigator: ComposeNavigator) {
+fun PreferredPaymentButton(composeNavigator: ComposeNavigator) {
   Box(
     modifier = Modifier
       .height(40.dp)
@@ -181,7 +181,7 @@ fun PaymentImage(
 }
 
 @Composable
-fun getRightIcon(
+fun RightIcon(
   drawableId: Int,
   size: Dp,
   onBackPressed: () -> Unit = {}

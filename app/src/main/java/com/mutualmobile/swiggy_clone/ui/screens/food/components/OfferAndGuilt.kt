@@ -28,7 +28,7 @@ import com.mutualmobile.swiggy_clone.common.composable.BackgroundImagePainter
 @Composable
 fun OfferAndGuilt() {
   Column(modifier = Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
-    Row(modifier = Modifier.width(500.dp), verticalAlignment = Alignment.CenterVertically) {
+    Row(verticalAlignment = Alignment.CenterVertically) {
       val modifier: Modifier = Modifier
         .height(50.dp)
         .weight(1f)

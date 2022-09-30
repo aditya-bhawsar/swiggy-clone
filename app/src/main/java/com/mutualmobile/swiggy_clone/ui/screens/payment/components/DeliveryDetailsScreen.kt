@@ -15,7 +15,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.mutualmobile.swiggy_clone.R
-import com.mutualmobile.swiggy_clone.ui.screens.payment.getRightIcon
+import com.mutualmobile.swiggy_clone.ui.screens.payment.RightIcon
 
 @Composable
 fun DeliveryDetails() {
@@ -27,7 +27,7 @@ fun DeliveryDetails() {
       Row(modifier = Modifier
         .fillMaxWidth()
         .padding(8.dp)) {
-        getRightIcon(drawableId = R.drawable.chain, size = 50.dp)
+        RightIcon(drawableId = R.drawable.chain, size = 50.dp)
         Column {
           Text(
             text = "Millet Kitchen Tiffins | Kukatpally", fontSize = 13.sp, color = Color.DarkGray

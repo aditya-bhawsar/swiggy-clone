@@ -51,7 +51,6 @@ fun SearchButton(composeNavigator: ComposeNavigator) {
   Column(modifier = Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
     Row(
       modifier = Modifier
-        .width(500.dp)
         .height(50.dp)
         .background(
           shape = RoundedCornerShape(16.dp), color = colorResource(

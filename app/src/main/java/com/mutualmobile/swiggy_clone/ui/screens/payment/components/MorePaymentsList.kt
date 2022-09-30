@@ -20,7 +20,7 @@ import com.mutualmobile.swiggy_clone.R
 import com.mutualmobile.swiggy_clone.common.composable.DividerComponent
 import com.mutualmobile.swiggy_clone.models.OtherPayment
 import com.mutualmobile.swiggy_clone.ui.screens.payment.PaymentImage
-import com.mutualmobile.swiggy_clone.ui.screens.payment.getRightIcon
+import com.mutualmobile.swiggy_clone.ui.screens.payment.RightIcon
 
 @Composable
 fun MorePaymentList(otherPaymentsList: List<OtherPayment>) {
@@ -69,7 +69,7 @@ fun MorePaymentsListItem(payment: OtherPayment) {
         PaymentImage(drawableId = payment.drawableId)
         getPaymentsTexts(title = payment.title, description = payment.description)
       }
-      getRightIcon(R.drawable.right_arrow_24, 15.dp)
+      RightIcon(R.drawable.right_arrow_24, 15.dp)
     }
     DividerComponent()
   }

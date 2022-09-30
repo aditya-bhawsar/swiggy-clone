@@ -20,13 +20,14 @@ object BuildPlugins {
 object Lib {
     object Android {
         private const val COMPOSE_VERSION = "1.2.0"
-        private const val MATERIAL_DESIGN_VERSION = "1.0.0-alpha01"
+        private const val MATERIAL_DESIGN_VERSION = "1.0.0-beta03"
         const val COMPOSE_COMPILER_VERSION = COMPOSE_VERSION
         private const val COMPOSE_ACTIVITY_VERSION = "1.4.0"
         private const val COMPOSE_NAVIGATION_VERSION = "2.5.0-alpha01"
 
         const val COMPOSE_UI = "androidx.compose.ui:ui:${COMPOSE_VERSION}"
         const val COMPOSE_MATERIAL = "androidx.compose.material3:material3:${MATERIAL_DESIGN_VERSION}"
+        const val COMPOSE_MATERIAL_1x = "androidx.compose.material:material:1.3.0-beta03"
         const val COMPOSE_TOOLING_PREVIEW =
             "androidx.compose.ui:ui-tooling-preview:${COMPOSE_VERSION}"
         const val COMPOSE_ACTIVITY =

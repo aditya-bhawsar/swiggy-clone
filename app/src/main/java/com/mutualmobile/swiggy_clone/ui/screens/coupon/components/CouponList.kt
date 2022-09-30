@@ -96,7 +96,6 @@ fun CouponListItem(title: String, offer: String, enabled: Boolean) {
                 )
                 Column(modifier = Modifier.fillMaxWidth()) {
                     Row(modifier = Modifier.fillMaxWidth()) {
-
                         Column(modifier = Modifier.fillMaxWidth(.8f)) {
                             Row(modifier = Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
                                 Image(
@@ -124,9 +123,11 @@ fun CouponListItem(title: String, offer: String, enabled: Boolean) {
                         }
                         Text(
                             modifier = Modifier
+                                .fillMaxWidth()
                                 .padding(end = 12.dp)
                                 .padding(vertical = 12.dp),
                             text = "APPLY",
+                            textAlign = TextAlign.End,
                             style = MaterialTheme.typography.titleSmall.copy(fontWeight = FontWeight.Bold),
                             color = if (enabled) Color(0xFFFFA500) else Color.LightGray
                         )

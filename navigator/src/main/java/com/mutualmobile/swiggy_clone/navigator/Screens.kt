@@ -13,6 +13,7 @@ sealed class SwiggyScreen(
     object Search: SwiggyScreen("search")
     object ApplyCoupon: SwiggyScreen("coupon")
     object Food: SwiggyScreen("food")
+    object Splash: SwiggyScreen("splash")
 }
 
 sealed class SwiggyRoute(val name: String) {

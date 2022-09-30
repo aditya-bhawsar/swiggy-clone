@@ -12,15 +12,21 @@ import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import com.mutualmobile.swiggy_clone.ui.screens.coupon.ApplyCouponScreen
 import com.mutualmobile.swiggy_clone.ui.screens.food.FoodScreen
 import com.mutualmobile.swiggy_clone.ui.screens.search.SearchScreen
+import com.mutualmobile.swiggy_clone.ui.screens.splash.SplashScreen
 
 fun NavGraphBuilder.orderRoute(
     composeNavigator: ComposeNavigator,
     widthSizeClass: WindowWidthSizeClass,
 ) {
     navigation(
-        startDestination = SwiggyScreen.Food.name,
+        startDestination = SwiggyScreen.Splash.name,
         route = SwiggyRoute.Order.name
     ) {
+        composable(SwiggyScreen.Splash.name){
+            SplashScreen {
+                composeNavigator.navigate(SwiggyScreen.Food.route)
+            }
+        }
         composable(SwiggyScreen.Cart.name) {
             CartScreen(composeNavigator = composeNavigator, widthSizeClass = widthSizeClass)
         }

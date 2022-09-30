@@ -9,6 +9,8 @@ import com.mutualmobile.swiggy_clone.navigator.SwiggyRoute
 import com.mutualmobile.swiggy_clone.navigator.SwiggyScreen
 import com.mutualmobile.swiggy_clone.ui.screens.cart.CartScreen
 import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
+import com.mutualmobile.swiggy_clone.ui.screens.coupon.ApplyCouponScreen
+import com.mutualmobile.swiggy_clone.ui.screens.search.SearchScreen
 
 fun NavGraphBuilder.dashboardRoute(
     composeNavigator: ComposeNavigator,
@@ -26,6 +28,16 @@ fun NavGraphBuilder.dashboardRoute(
                 composeNavigator = composeNavigator,
                 widthSizeClass = widthSizeClass
             )
+        }
+        composable(SwiggyScreen.Search.name) {
+            SearchScreen(
+                composeNavigator = composeNavigator,
+                widthSizeClass = widthSizeClass,
+                forRestaurant = false
+            )
+        }
+        composable(SwiggyScreen.ApplyCoupon.name) {
+            ApplyCouponScreen(composeNavigator = composeNavigator, widthSizeClass = widthSizeClass)
         }
     }
 

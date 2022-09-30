@@ -42,6 +42,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.mutualmobile.swiggy_clone.R
 import com.mutualmobile.swiggy_clone.common.composable.BackButton
 import com.mutualmobile.swiggy_clone.common.composable.SpacerComponent
+import com.mutualmobile.swiggy_clone.navigator.ComposeNavigator
 import com.mutualmobile.swiggy_clone.ui.screens.search.components.AllSearchItem
 import com.mutualmobile.swiggy_clone.ui.screens.search.components.PopularDishesSection
 import com.mutualmobile.swiggy_clone.ui.screens.search.components.SearchBar
@@ -53,7 +54,8 @@ import com.mutualmobile.swiggy_clone.ui.screens.search.components.TrendingSearch
 fun SearchScreen(
     widthSizeClass: WindowWidthSizeClass,
     viewModel: SearchScreenViewModel = hiltViewModel(),
-    forRestaurant: Boolean
+    forRestaurant: Boolean,
+    composeNavigator: ComposeNavigator
 ) {
     var query by rememberSaveable { mutableStateOf("") }
 

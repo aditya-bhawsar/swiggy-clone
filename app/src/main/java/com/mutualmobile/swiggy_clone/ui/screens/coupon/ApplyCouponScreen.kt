@@ -42,6 +42,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.mutualmobile.swiggy_clone.R
+import com.mutualmobile.swiggy_clone.navigator.ComposeNavigator
 import com.mutualmobile.swiggy_clone.ui.screens.cart.components.Divider
 import com.mutualmobile.swiggy_clone.ui.screens.coupon.components.CouponList
 import com.mutualmobile.swiggy_clone.ui.screens.coupon.components.CouponListItem
@@ -53,7 +54,8 @@ import com.mutualmobile.swiggy_clone.ui.screens.search.components.SearchBar
 @Composable
 fun ApplyCouponScreen(
     widthSizeClass: WindowWidthSizeClass,
-    viewModel: ApplyCouponViewModel = hiltViewModel()
+    viewModel: ApplyCouponViewModel = hiltViewModel(),
+    composeNavigator: ComposeNavigator
 ) {
     var query by rememberSaveable { mutableStateOf("") }
 

@@ -10,6 +10,8 @@ sealed class SwiggyScreen(
 
     object Cart: SwiggyScreen("cart")
     object Confirm: SwiggyScreen("checkout")
+    object Search: SwiggyScreen("search")
+    object ApplyCoupon: SwiggyScreen("coupon")
 }
 
 sealed class SwiggyRoute(val name: String) {

@@ -17,3 +17,5 @@ val SwiggyGreen = Color(0xFF19a672)
 val SwiggySubtitleTextColor = Color(0xFF636363)
 val SwiggyBackgroundColor = Color(0xFFf2f1f6)
 val SwiggySubHeaderTextColor = Color(0xFF626166)
+
+val SwiggyOrderConfirmationBlue = Color(0xFF6095d7)

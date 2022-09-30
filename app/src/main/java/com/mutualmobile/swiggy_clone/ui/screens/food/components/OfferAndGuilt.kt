@@ -1,4 +1,4 @@
-package com.mutualmobile.swiggy_clone.ui.screens.food_tab.components
+package com.mutualmobile.swiggy_clone.ui.screens.food.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
@@ -24,7 +24,7 @@ import com.mutualmobile.swiggy_clone.common.composable.getBackgroundImage
 @Composable
 fun OfferAndGuilt() {
   Column(modifier = Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
-    Row(modifier = Modifier.width(500.dp), verticalAlignment = Alignment.CenterVertically) {
+    Row(modifier = Modifier, verticalAlignment = Alignment.CenterVertically) {
       val modifier: Modifier = Modifier
         .height(70.dp)
         .weight(1f)

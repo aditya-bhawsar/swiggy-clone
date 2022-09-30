@@ -24,9 +24,9 @@ import com.mutualmobile.swiggy_clone.ui.theme.SwiggyGreen
 
 @Composable
 fun BottomBar(
-    onProceedClick: () -> Unit,
+    onProceedClicked: () -> Unit,
     price: String,
-    onViewDetailedClick: () -> Unit
+    onViewDetailsClicked: () -> Unit
 ) {
     Row(
         modifier = Modifier
@@ -48,7 +48,9 @@ fun BottomBar(
                 text = stringResource(id = R.string.view_detailed_bill),
                 style = MaterialTheme.typography.displaySmall,
                 color = SwiggyGreen,
-                modifier = Modifier.clickable {  }
+                modifier = Modifier.clickable {
+                    onViewDetailsClicked()
+                }
             )
         }
         Text(
@@ -58,7 +60,9 @@ fun BottomBar(
             modifier = Modifier
                 .clip(RoundedCornerShape(12.dp))
                 .background(SwiggyGreen)
-                .clickable { }
+                .clickable {
+                    onProceedClicked()
+                }
                 .padding(horizontal = 24.dp, vertical = 12.dp)
 
         )

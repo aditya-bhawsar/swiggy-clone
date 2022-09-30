@@ -1,4 +1,4 @@
-package com.mutualmobile.swiggy_clone.ui.screens.food_tab.components
+package com.mutualmobile.swiggy_clone.ui.screens.food.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement

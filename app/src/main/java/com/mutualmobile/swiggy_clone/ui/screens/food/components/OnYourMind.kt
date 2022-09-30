@@ -1,4 +1,4 @@
-package com.mutualmobile.swiggy_clone.ui.screens.food_tab.components
+package com.mutualmobile.swiggy_clone.ui.screens.food.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
@@ -8,11 +8,14 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -34,7 +37,7 @@ fun WhatOnYourMindList(whatsOnYourMindList: MutableList<WhatsOnMind>) {
 fun WhatOnMindListItem(item: WhatsOnMind) {
   Column(modifier = Modifier.padding(16.dp), horizontalAlignment = Alignment.CenterHorizontally) {
     Image(
-      modifier = Modifier.size(80.dp), painter = painterResource(item.drawableId1),
+      modifier = Modifier.size(80.dp).clip(CircleShape), painter = painterResource(item.drawableId1), contentScale = ContentScale.FillBounds,
       contentDescription = "food_item"
     )
     Text(
@@ -45,7 +48,7 @@ fun WhatOnMindListItem(item: WhatsOnMind) {
     getSpacer()
 
     Image(
-      modifier = Modifier.size(80.dp), painter = painterResource(item.drawableId2),
+      modifier = Modifier.size(80.dp).clip(CircleShape), painter = painterResource(item.drawableId2), contentScale = ContentScale.FillBounds,
       contentDescription = "food_item"
     )
     Text(

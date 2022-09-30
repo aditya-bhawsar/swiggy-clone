@@ -3,6 +3,8 @@
 
     <dimen name="width_medium">8dp</dimen>
     <dimen name="width_large">16dp</dimen>
+    <dimen name="height_small">4dp</dimen>
+    <dimen name="height_medium">8dp</dimen>
     <dimen name="height_12">12dp</dimen>
     <dimen name="height_large">16dp</dimen>
     <dimen name="height_extra_large">24dp</dimen>
@@ -17,5 +19,6 @@
     <dimen name="rounded_corner_small">4dp</dimen>
     <dimen name="rounded_corner_medium">8dp</dimen>
     <dimen name="rounded_corner_large">12dp</dimen>
+    <dimen name="rounded_corner_extra_large">24dp</dimen>
     <dimen name="delivery_instruction_item_width">100dp</dimen>
 </resources>

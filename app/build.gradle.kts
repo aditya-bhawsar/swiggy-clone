@@ -75,7 +75,14 @@ dependencies {
     debugImplementation(Lib.Android.COMPOSE_TOOLING)
     debugImplementation(Lib.Android.COMPOSE_MANIFEST)
 
-    implementation("com.google.accompanist:accompanist-flowlayout:0.26.4-beta")
+     implementation(Lib.Android.MATERIAL_API)
+    /*COIL*/
+    implementation(Lib.Coil.COIL_LIB)
+
+    implementation(Lib.Accompanist.ACCOMPANIST_PAGER)
+    implementation(Lib.Accompanist.ACCOMPANIST_IDICATOR)
+    implementation(Lib.Accompanist.ACCOMPANIST_FLOW_LAYOUT)
+
     implementation("androidx.compose.material3:material3-window-size-class:1.0.0-beta01")
     /*DI*/
     implementation(Lib.DI.HILT_ANDROID)

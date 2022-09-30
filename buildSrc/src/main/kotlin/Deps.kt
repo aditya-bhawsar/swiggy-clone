@@ -38,6 +38,7 @@ object Lib {
         const val COMPOSE_NAVIGATION =
             "androidx.navigation:navigation-compose:${COMPOSE_NAVIGATION_VERSION}"
         const val APP_COMPAT = "androidx.appcompat:appcompat:1.3.0-beta01"
+        const val MATERIAL_API = "com.google.android.material:material:1.6.1"
     }
 
     object Room {
@@ -85,5 +86,17 @@ object Lib {
         const val COROUTINES = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${COROUTINES_VERSION}"
         const val COROUTINES_ANDROID =
             "org.jetbrains.kotlinx:kotlinx-coroutines-android:${COROUTINES_VERSION}"
+    }
+
+    object Coil {
+        private const val COIL_VERSION = "2.2.1"
+        const val COIL_LIB ="io.coil-kt:coil-compose:${COIL_VERSION}"
+    }
+
+    object Accompanist {
+        private const val ACCOMPANIST_VERSION = "0.25.0"
+        const val ACCOMPANIST_PAGER ="com.google.accompanist:accompanist-pager:${ACCOMPANIST_VERSION}"
+        const val ACCOMPANIST_IDICATOR ="com.google.accompanist:accompanist-pager-indicators:${ACCOMPANIST_VERSION}"
+        const val ACCOMPANIST_FLOW_LAYOUT = "com.google.accompanist:accompanist-flowlayout:0.26.4-beta"
     }
 }

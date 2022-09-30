@@ -3,6 +3,7 @@ import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -11,9 +12,9 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.progressSemantics
-import androidx.compose.material.CircularProgressIndicator
-import androidx.compose.material.Text
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -28,6 +29,7 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.Stroke
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -121,29 +123,10 @@ fun OrderConfirmationIndicator(orderConfirmed: Boolean) {
             )
         }
     } else {
-        Canvas(modifier = Modifier
-            .progressSemantics()
-            .size(200.dp)) {
-            drawArc(
-                color = SwiggyOrderConfirmationBlue,
-                startAngle = 270f,
-                sweepAngle = 360f,
-                useCenter = false,
-                style =  Stroke(strokeWidth.toPx(), cap = StrokeCap.Round)
-            )
-            drawLine(
-                color = SwiggyOrderConfirmationBlue,
-                start = Offset(120f,250f),
-                end = Offset(200f,340f),
-                strokeWidth = strokeWidth.toPx()
-            )
-            drawLine(
-                color = SwiggyOrderConfirmationBlue,
-                start = Offset(190f,343f),
-                end = Offset(400f,185f),
-                strokeWidth = strokeWidth.toPx()
-            )
-        }
+        Image(
+            painter = painterResource(id = R.drawable.ic_check), contentDescription = "",
+            modifier = Modifier.size(200.dp)
+        )
     }
 }
 

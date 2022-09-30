@@ -24,6 +24,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.dimensionResource
+import androidx.compose.ui.unit.dp
 import com.mutualmobile.swiggy_clone.R
 import com.mutualmobile.swiggy_clone.common.composable.BackButton
 import com.mutualmobile.swiggy_clone.common.composable.SpacerComponent

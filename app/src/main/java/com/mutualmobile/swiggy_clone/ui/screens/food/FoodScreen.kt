@@ -59,7 +59,7 @@ fun SingleScreen(foodScreenViewModel: FoodScreenViewModel, composeNavigator: Com
     }
     items(foodScreenViewModel.getRestaurantsList().size) { index ->
       Column(modifier = Modifier.padding(start = 16.dp)) {
-        RestaurantsItem(foodScreenViewModel.getRestaurantsList()[index])
+        RestaurantsItem(foodScreenViewModel.getRestaurantsList()[index], composeNavigator)
       }
     }
   }
@@ -77,7 +77,7 @@ fun MultiScreen(foodScreenViewModel: FoodScreenViewModel, composeNavigator: Comp
       }
       item {
         FlowRow() {
-          GridContent(foodScreenViewModel = foodScreenViewModel)
+          GridContent(foodScreenViewModel = foodScreenViewModel, composeNavigator = composeNavigator)
         }
       }
     }
@@ -85,10 +85,13 @@ fun MultiScreen(foodScreenViewModel: FoodScreenViewModel, composeNavigator: Comp
 }
 
 @Composable
-internal fun GridContent(foodScreenViewModel: FoodScreenViewModel) {
+internal fun GridContent(
+  foodScreenViewModel: FoodScreenViewModel,
+  composeNavigator: ComposeNavigator
+) {
   repeat(foodScreenViewModel.getRestaurantsList().size) { index ->
     Column(modifier = Modifier.padding(4.dp), horizontalAlignment = Alignment.CenterHorizontally) {
-      RestaurantsItem(foodScreenViewModel.getRestaurantsList()[index])
+      RestaurantsItem(foodScreenViewModel.getRestaurantsList()[index], composeNavigator = composeNavigator)
     }
   }
 }

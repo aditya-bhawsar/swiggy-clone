@@ -1,4 +1,4 @@
-package com.mutualmobile.swiggy_clone.ui.shopDetails.components
+package com.mutualmobile.swiggy_clone.ui.screens.shopDetails.components
 
 import android.util.Log
 import androidx.compose.foundation.Image

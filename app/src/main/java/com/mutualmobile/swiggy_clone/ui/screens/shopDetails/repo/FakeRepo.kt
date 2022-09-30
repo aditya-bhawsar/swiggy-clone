@@ -1,4 +1,4 @@
-package com.mutualmobile.swiggy_clone.ui.shopDetails.repo
+package com.mutualmobile.swiggy_clone.ui.screens.shopDetails.repo
 
 import com.mutualmobile.swiggy_clone.R
 import kotlinx.coroutines.flow.Flow

@@ -1,9 +1,8 @@
-package com.mutualmobile.swiggy_clone.ui.shopDetails
+package com.mutualmobile.swiggy_clone.ui.screens.shopDetails
 
-import android.content.Context
 import androidx.lifecycle.ViewModel
-import com.mutualmobile.swiggy_clone.ui.shopDetails.repo.FoodItemModel
-import com.mutualmobile.swiggy_clone.ui.shopDetails.repo.getFakeFoodItems
+import com.mutualmobile.swiggy_clone.ui.screens.shopDetails.repo.FoodItemModel
+import com.mutualmobile.swiggy_clone.ui.screens.shopDetails.repo.getFakeFoodItems
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.*
 import javax.inject.Inject

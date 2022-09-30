@@ -1,6 +1,7 @@
 package com.mutualmobile.swiggy_clone.ui.screens.food.components
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -21,22 +22,24 @@ import androidx.compose.ui.unit.sp
 import com.mutualmobile.swiggy_clone.R.color
 import com.mutualmobile.swiggy_clone.models.Restaurant
 import com.mutualmobile.swiggy_clone.models.TopRatedNearYou
+import com.mutualmobile.swiggy_clone.navigator.ComposeNavigator
+import com.mutualmobile.swiggy_clone.navigator.SwiggyScreen
 
 @Composable
-fun RestaurantsItem(restaurant: Restaurant) {
+fun RestaurantsItem(restaurant: Restaurant, composeNavigator: ComposeNavigator) {
   Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.padding(16.dp)) {
     TopRatedNearYouListItem(
       modifier = Modifier
         .height(150.dp)
         .width(140.dp), restaurant.toTopRatedNearYou()
     )
-    RestaurantsItemTexts(restaurant)
+    RestaurantsItemTexts(restaurant, composeNavigator = composeNavigator)
   }
 }
 
 @Composable
-fun RestaurantsItemTexts(restaurant: Restaurant) {
-  Column(modifier = Modifier.padding(start = 16.dp)) {
+fun RestaurantsItemTexts(restaurant: Restaurant, composeNavigator: ComposeNavigator) {
+  Column(modifier = Modifier.padding(start = 16.dp).clickable { composeNavigator.navigate(SwiggyScreen.Menu.name) }) {
     Text(
       text = restaurant.restaurantName, fontWeight = FontWeight.Bold, color = Color.DarkGray,
       fontSize = 14.sp

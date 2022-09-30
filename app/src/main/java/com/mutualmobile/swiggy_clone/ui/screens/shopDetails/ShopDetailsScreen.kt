@@ -1,4 +1,4 @@
-package com.mutualmobile.swiggy_clone.ui.shopDetails
+package com.mutualmobile.swiggy_clone.ui.screens.shopDetails
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
@@ -8,19 +8,15 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Card
 import androidx.compose.material.Divider
 import androidx.compose.material.TopAppBar
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Color.Companion.LightGray
-import androidx.compose.ui.graphics.Color.Companion.Transparent
 import androidx.compose.ui.graphics.Color.Companion.White
-import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
@@ -34,15 +30,19 @@ import com.gowtham.ratingbar.RatingBarStyle
 import com.mutualmobile.swiggy_clone.R
 import com.mutualmobile.swiggy_clone.common.composable.RoundedButton
 import com.mutualmobile.swiggy_clone.common.isScrolled
-import com.mutualmobile.swiggy_clone.ui.shopDetails.components.TopBar
-import com.mutualmobile.swiggy_clone.ui.shopDetails.repo.FoodItemModel
+import com.mutualmobile.swiggy_clone.navigator.ComposeNavigator
+import com.mutualmobile.swiggy_clone.ui.screens.shopDetails.components.TopBar
+import com.mutualmobile.swiggy_clone.ui.screens.shopDetails.repo.FoodItemModel
 import com.mutualmobile.swiggy_clone.ui.theme.Spacing
 
 
 @Preview(showSystemUi = true)
 @Preview(showBackground = true)
 @Composable
-fun ShopDetailsScreen(viewModel: ShopDetailsVM = hiltViewModel()) {
+fun ShopDetailsScreen(
+  viewModel: ShopDetailsVM = hiltViewModel(),
+  composeNavigator: ComposeNavigator
+) {
   val lazyListState = rememberLazyListState()
   val systemUiController = rememberSystemUiController()
   SideEffect {
@@ -56,7 +56,6 @@ fun ShopDetailsScreen(viewModel: ShopDetailsVM = hiltViewModel()) {
   Surface(modifier = Modifier.fillMaxWidth(), color = MaterialTheme.colorScheme.background) {
     Column() {
       CommonScrollToRevealToolbar(lazyListState, items) {
-
       }
     }
 
@@ -167,7 +166,7 @@ fun FoodItemCard(item: FoodItemModel) {
       ),
     horizontalArrangement = Arrangement.SpaceBetween
   ) {
-    ItemDesciption(item)
+    ItemDescription(item)
     Spacer(Modifier.weight(1f))
     ItemImage(item)
   }
@@ -210,7 +209,7 @@ fun AddButton(foodItemModel: FoodItemModel) {
 
 
 @Composable
-private fun ItemDesciption(item: FoodItemModel) {
+private fun ItemDescription(item: FoodItemModel) {
   Column {
     Image(
       painter = painterResource(id = R.drawable.non_veg), contentDescription = "",

@@ -2,6 +2,7 @@ package com.mutualmobile.swiggy_clone.payments
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -15,9 +16,9 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Card
-import androidx.compose.material.Divider
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
+import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -29,33 +30,40 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mutualmobile.swiggy_clone.HeaderTextView
 import com.mutualmobile.swiggy_clone.R
 import com.mutualmobile.swiggy_clone.R.drawable
-import com.mutualmobile.swiggy_clone.getBackgroundImage
-import com.mutualmobile.swiggy_clone.getDivider
+import com.mutualmobile.swiggy_clone.common.composable.HeaderTextView
+import com.mutualmobile.swiggy_clone.common.composable.getBackgroundImage
+import com.mutualmobile.swiggy_clone.common.composable.getDivider
 import com.mutualmobile.swiggy_clone.ui.screens.payment.PaymentsViewModel
 
 @Composable
-fun PaymentScreen(paymentsViewModel: PaymentsViewModel) {
-  var isForSmallScreen = false
+fun PaymentScreen(
+  widthSizeClass: WindowWidthSizeClass,
+  paymentsViewModel: PaymentsViewModel, onBackPressed: () ->Unit
+) {
+
   Column(modifier = Modifier.background(color = colorResource(id = R.color.payment_backgound))) {
-    PaymentToolBar()
-  if(isForSmallScreen) {
-      Column(modifier = Modifier
-        .verticalScroll(rememberScrollState())
-        .weight(1f, false)) {
-         getTopItems()
+    PaymentToolBar(onBackPressed)
+    if (widthSizeClass != WindowWidthSizeClass.Expanded) {
+      Column(
+        modifier = Modifier
+          .verticalScroll(rememberScrollState())
+          .weight(1f, false)
+      ) {
+        getTopItems()
         HeaderTextView(title = "More Payment Options")
         MorePaymentItems(otherPaymentsList = paymentsViewModel.getPaymentsList())
       }
-    }else{
+    } else {
       Row() {
-       Column(modifier = Modifier
-         .verticalScroll(rememberScrollState())
-         .weight(1f, false)) {
-           getTopItems()
-       }
+        Column(
+          modifier = Modifier
+            .verticalScroll(rememberScrollState())
+            .weight(1f, false)
+        ) {
+          getTopItems()
+        }
         Column(modifier = Modifier.weight(1f)) {
           HeaderTextView(title = "More Payment Options")
           MorePaymentList(otherPaymentsList = paymentsViewModel.getPaymentsList())
@@ -65,8 +73,9 @@ fun PaymentScreen(paymentsViewModel: PaymentsViewModel) {
     }
   }
 }
+
 @Composable
-fun getTopItems(){
+fun getTopItems() {
   DeliveryDetails()
   HeaderTextView(title = "Preferred Payment")
   PreferredPayment()
@@ -102,11 +111,11 @@ fun PreferredPayment() {
 }
 
 @Composable
-fun PaymentToolBar() {
+fun PaymentToolBar(onBackPressed: () -> Unit) {
   TopAppBar(modifier = Modifier.height(60.dp), backgroundColor = Color.White) {
     Column() {
       Row(modifier = Modifier.padding(8.dp), verticalAlignment = Alignment.CenterVertically) {
-        getRightIcon(drawableId = drawable.back_arrow_24, size = 24.dp)
+        getRightIcon(drawableId = drawable.back_arrow_24, size = 24.dp,onBackPressed)
         Spacer(modifier = Modifier.width(8.dp))
         Column() {
           Text(
@@ -165,9 +174,10 @@ fun getPaymentImage(
 @Composable
 fun getRightIcon(
   drawableId: Int,
-  size: Dp
+  size: Dp,
+  onBackPressed: () -> Unit = {}
 ) {
-  Row(verticalAlignment = Alignment.CenterVertically) {
+  Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.clickable { onBackPressed.invoke() }) {
     Image(
       modifier = Modifier
         .size(size),

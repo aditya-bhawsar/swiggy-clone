@@ -20,8 +20,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.mutualmobile.swiggy_clone.R
-import com.mutualmobile.swiggy_clone.getBackgroundImage
-import com.mutualmobile.swiggy_clone.getSpacer
+import com.mutualmobile.swiggy_clone.common.composable.getBackgroundImage
+import com.mutualmobile.swiggy_clone.common.composable.getSpacer
 
 @Composable
 fun AddNewPayment() {

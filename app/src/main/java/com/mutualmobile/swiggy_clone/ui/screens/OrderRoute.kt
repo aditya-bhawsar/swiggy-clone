@@ -20,12 +20,12 @@ fun NavGraphBuilder.orderRoute(
     widthSizeClass: WindowWidthSizeClass,
 ) {
     navigation(
-        startDestination = SwiggyScreen.Splash.name,
+        startDestination = SwiggyScreen.Cart.name,
         route = SwiggyRoute.Order.name
     ) {
         composable(SwiggyScreen.Payment.name){
             PaymentScreen(widthSizeClass, composeNavigator = composeNavigator){
-                composeNavigator.popUpTo(SwiggyScreen.Payment.name, false)
+                composeNavigator.popUpTo(SwiggyScreen.Cart.name, false)
             }
         }
         composable(SwiggyScreen.Splash.name){

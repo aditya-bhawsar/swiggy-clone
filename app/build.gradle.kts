@@ -63,6 +63,7 @@ dependencies {
     implementation(Lib.Android.COMPOSE_UI)
     implementation(Lib.Android.COMPOSE_MATERIAL)
     implementation(Lib.Android.COMPOSE_MATERIAL_1x)
+    implementation(Lib.Android.COMPOSE_MATERIAL3)
     implementation(Lib.Android.COMPOSE_TOOLING_PREVIEW)
     implementation(Lib.Android.COMPOSE_ACTIVITY)
     implementation(project( ":domain"))
@@ -74,8 +75,13 @@ dependencies {
     androidTestImplementation(Lib.Test.COMPOSE_TEST_JUNIT)
     debugImplementation(Lib.Android.COMPOSE_TOOLING)
     debugImplementation(Lib.Android.COMPOSE_MANIFEST)
+    implementation(Lib.Android.MATERIAL3_WINDOW)
+    implementation (Lib.Android.COMPOSE_CONSTRAINT)
+    implementation(Lib.Android.MATERIAL_API)
+    
+    implementation (Lib.Accompanist.ACCOMPANIST_SYSTEM_UI_CONTROLLER)
 
-     implementation(Lib.Android.MATERIAL_API)
+
     /*COIL*/
     implementation(Lib.Coil.COIL_LIB)
 
@@ -89,4 +95,8 @@ dependencies {
     implementation(Lib.DI.HILT_NAVIGATION_COMPOSE)
     kapt(Lib.DI.HILT_COMPILER)
     kapt(Lib.DI.HILT_ANDROID_COMPILER)
+
+    implementation (Lib.Rating.RATING_LIB)
+
+
 }

@@ -20,6 +20,7 @@ object BuildPlugins {
 object Lib {
     object Android {
         private const val COMPOSE_VERSION = "1.2.0"
+        private const val MATERIAL3_DESIGN_VERSION = "1.0.0-alpha01"
         private const val MATERIAL_DESIGN_VERSION = "1.0.0-beta03"
         const val COMPOSE_COMPILER_VERSION = COMPOSE_VERSION
         private const val COMPOSE_ACTIVITY_VERSION = "1.4.0"
@@ -28,6 +29,7 @@ object Lib {
         const val COMPOSE_UI = "androidx.compose.ui:ui:${COMPOSE_VERSION}"
         const val COMPOSE_MATERIAL = "androidx.compose.material3:material3:${MATERIAL_DESIGN_VERSION}"
         const val COMPOSE_MATERIAL_1x = "androidx.compose.material:material:1.3.0-beta03"
+        const val COMPOSE_MATERIAL3 = "androidx.compose.material3:material3:${MATERIAL3_DESIGN_VERSION}"
         const val COMPOSE_TOOLING_PREVIEW =
             "androidx.compose.ui:ui-tooling-preview:${COMPOSE_VERSION}"
         const val COMPOSE_ACTIVITY =
@@ -39,6 +41,12 @@ object Lib {
             "androidx.navigation:navigation-compose:${COMPOSE_NAVIGATION_VERSION}"
         const val APP_COMPAT = "androidx.appcompat:appcompat:1.3.0-beta01"
         const val MATERIAL_API = "com.google.android.material:material:1.6.1"
+        const val MATERIAL3_WINDOW = "androidx.compose.material3:material3-window-size-class:1.0.0-beta01"
+        const val COMPOSE_CONSTRAINT = "androidx.constraintlayout:constraintlayout-compose:1.0.1"
+
+    }
+    object Rating{
+        const val RATING_LIB= "com.github.a914-gowtham:compose-ratingbar:1.2.3"
     }
 
     object Room {
@@ -98,5 +106,6 @@ object Lib {
         const val ACCOMPANIST_PAGER ="com.google.accompanist:accompanist-pager:${ACCOMPANIST_VERSION}"
         const val ACCOMPANIST_IDICATOR ="com.google.accompanist:accompanist-pager-indicators:${ACCOMPANIST_VERSION}"
         const val ACCOMPANIST_FLOW_LAYOUT = "com.google.accompanist:accompanist-flowlayout:0.26.4-beta"
+        const val ACCOMPANIST_SYSTEM_UI_CONTROLLER = "com.google.accompanist:accompanist-systemuicontroller:0.23.1"
     }
 }

@@ -19,7 +19,7 @@ import androidx.compose.ui.unit.sp
 import com.mutualmobile.swiggy_clone.R
 import com.mutualmobile.swiggy_clone.common.composable.DividerComponent
 import com.mutualmobile.swiggy_clone.models.OtherPayment
-import com.mutualmobile.swiggy_clone.ui.screens.payment.getPaymentImage
+import com.mutualmobile.swiggy_clone.ui.screens.payment.PaymentImage
 import com.mutualmobile.swiggy_clone.ui.screens.payment.getRightIcon
 
 @Composable

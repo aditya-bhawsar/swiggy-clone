@@ -78,10 +78,10 @@ fun TopRateListItem(item: TopRatedNearYou) {
 @Composable
 fun HotelInfo(item: TopRatedNearYou) {
   Column(modifier = Modifier.padding(8.dp)) {
-    Text(text = item.title, color = Color.DarkGray, fontWeight = FontWeight.Bold, fontSize = 14.sp)
+    Text(text = item.title, color = Color.DarkGray, fontWeight = FontWeight.Bold, fontSize = 13.sp)
     Text(
       text = item.description, color = Color.DarkGray, fontWeight = FontWeight.Bold,
-      fontSize = 12.sp
+      fontSize = 11.sp
     )
   }
 }
@@ -95,7 +95,7 @@ fun OneOfferItem(
       .background(color = Color(color.teal_700))
       .padding(4.dp), verticalAlignment = Alignment.CenterVertically
   ) {
-    Image(painter = painterResource(drawable.donut), contentDescription = "one_image")
+    Image(painter = painterResource(drawable.one), contentDescription = "one_image")
     Spacer(
       modifier = Modifier
         .width(4.dp)

@@ -91,52 +91,52 @@ class FoodScreenViewModel @Inject constructor() : ViewModel() {
   fun getRestaurantsList(): MutableList<Restaurant> {
     val list = mutableListOf<Restaurant>()
     list.add(
-      Restaurant(drawableId = R.drawable.rest_bg, isOfferAvailable = true,offerTitle = "20% OFF", offerDescription = "UPTO $50",
-      restaurantName = "KS Bakers", restaurantRating = "4.3 30 mins", itemsDescriotion = "Pizza, Burger, pasta", area = "Kukatpally")
+      Restaurant(drawableId = R.drawable.rest_4, isOfferAvailable = true,offerTitle = "20% OFF", offerDescription = "UPTO $50",
+      restaurantName = "Rice Bowl", restaurantRating = "4.5 30 mins", itemsDescriotion = "Noth Indian, South Indian", area = "Kukatpally")
     )
     list.add(
-      Restaurant(drawableId = R.drawable.rest_bg, isOfferAvailable = true,offerTitle = "20% OFF", offerDescription = "UPTO $50",
-        restaurantName = "KS Bakers", restaurantRating = "4.3 30 mins", itemsDescriotion = "Pizza, Burger, pasta", area = "Kukatpally")
+      Restaurant(drawableId = R.drawable.rest_3, isOfferAvailable = true,offerTitle = "20% OFF", offerDescription = "UPTO $50",
+        restaurantName = "Srikanya", restaurantRating = "4.3 30 mins", itemsDescriotion = "South Indian, Noth Indian", area = "Kukatpally")
     )
     list.add(
-      Restaurant(drawableId = R.drawable.rest_bg, isOfferAvailable = true,offerTitle = "20% OFF", offerDescription = "UPTO $50",
-        restaurantName = "KS Bakers", restaurantRating = "4.3 30 mins", itemsDescriotion = "Pizza, Burger, pasta", area = "Kukatpally")
+      Restaurant(drawableId = R.drawable.rest_7, isOfferAvailable = true,offerTitle = "20% OFF", offerDescription = "UPTO $50",
+        restaurantName = "Chaithanya Food Court", restaurantRating = "4.3 30 mins", itemsDescriotion = "Biryani, Andhra food", area = "Kukatpally")
     )
     list.add(
-      Restaurant(drawableId = R.drawable.rest_bg, isOfferAvailable = true,offerTitle = "20% OFF", offerDescription = "UPTO $50",
-        restaurantName = "KS Bakers", restaurantRating = "4.3 30 mins", itemsDescriotion = "Pizza, Burger, pasta", area = "Kukatpally")
+      Restaurant(drawableId = R.drawable.rest_4, isOfferAvailable = true,offerTitle = "20% OFF", offerDescription = "UPTO $50",
+        restaurantName = "Rice Bowl", restaurantRating = "4.3 30 mins", itemsDescriotion = "Noth Indian, South Indian", area = "Kukatpally")
     )
 
     list.add(
-      Restaurant(drawableId = R.drawable.rest_bg, isOfferAvailable = true,offerTitle = "20% OFF", offerDescription = "UPTO $50",
-        restaurantName = "KS Bakers", restaurantRating = "4.3 30 mins", itemsDescriotion = "Pizza, Burger, pasta", area = "Kukatpally")
+      Restaurant(drawableId = R.drawable.rest_5, isOfferAvailable = true,offerTitle = "20% OFF", offerDescription = "UPTO $50",
+        restaurantName = "Vasista Restaurant", restaurantRating = "4.3 30 mins", itemsDescriotion = "Andhra Food", area = "Kukatpally")
+    )
+    list.add(
+      Restaurant(drawableId = R.drawable.rest_6, isOfferAvailable = true,offerTitle = "20% OFF", offerDescription = "UPTO $50",
+        restaurantName = "Raja Rani Hotel", restaurantRating = "4.3 30 mins", itemsDescriotion = "South Indian, North Indian", area = "Kukatpally")
     )
     list.add(
       Restaurant(drawableId = R.drawable.rest_bg, isOfferAvailable = true,offerTitle = "20% OFF", offerDescription = "UPTO $50",
         restaurantName = "KS Bakers", restaurantRating = "4.3 30 mins", itemsDescriotion = "Pizza, Burger, pasta", area = "Kukatpally")
     )
     list.add(
-      Restaurant(drawableId = R.drawable.rest_bg, isOfferAvailable = true,offerTitle = "20% OFF", offerDescription = "UPTO $50",
+      Restaurant(drawableId = R.drawable.rest_7, isOfferAvailable = true,offerTitle = "20% OFF", offerDescription = "UPTO $50",
+        restaurantName = "Chaithanya Food Court", restaurantRating = "4.3 30 mins", itemsDescriotion = "Biryani, Andhra food", area = "Kukatpally")
+    )
+    list.add(
+      Restaurant(drawableId = R.drawable.rest_3, isOfferAvailable = true,offerTitle = "20% OFF", offerDescription = "UPTO $50",
+        restaurantName = "Srikanya", restaurantRating = "4.3 30 mins", itemsDescriotion = "South Indian, Noth Indian", area = "Kukatpally")
+    )
+    list.add(
+      Restaurant(drawableId = R.drawable.rest_6, isOfferAvailable = true,offerTitle = "20% OFF", offerDescription = "UPTO $50",
         restaurantName = "KS Bakers", restaurantRating = "4.3 30 mins", itemsDescriotion = "Pizza, Burger, pasta", area = "Kukatpally")
     )
     list.add(
-      Restaurant(drawableId = R.drawable.rest_bg, isOfferAvailable = true,offerTitle = "20% OFF", offerDescription = "UPTO $50",
-        restaurantName = "KS Bakers", restaurantRating = "4.3 30 mins", itemsDescriotion = "Pizza, Burger, pasta", area = "Kukatpally")
+      Restaurant(drawableId = R.drawable.rest_4, isOfferAvailable = true,offerTitle = "20% OFF", offerDescription = "UPTO $50",
+        restaurantName = "Rice Bowl", restaurantRating = "4.3 30 mins", itemsDescriotion = "Noth Indian, South Indian", area = "Kukatpally")
     )
     list.add(
-      Restaurant(drawableId = R.drawable.rest_bg, isOfferAvailable = true,offerTitle = "20% OFF", offerDescription = "UPTO $50",
-        restaurantName = "KS Bakers", restaurantRating = "4.3 30 mins", itemsDescriotion = "Pizza, Burger, pasta", area = "Kukatpally")
-    )
-    list.add(
-      Restaurant(drawableId = R.drawable.rest_bg, isOfferAvailable = true,offerTitle = "20% OFF", offerDescription = "UPTO $50",
-        restaurantName = "KS Bakers", restaurantRating = "4.3 30 mins", itemsDescriotion = "Pizza, Burger, pasta", area = "Kukatpally")
-    )
-    list.add(
-      Restaurant(drawableId = R.drawable.rest_bg, isOfferAvailable = true,offerTitle = "20% OFF", offerDescription = "UPTO $50",
-        restaurantName = "KS Bakers", restaurantRating = "4.3 30 mins", itemsDescriotion = "Pizza, Burger, pasta", area = "Kukatpally")
-    )
-    list.add(
-      Restaurant(drawableId = R.drawable.rest_bg, isOfferAvailable = true,offerTitle = "20% OFF", offerDescription = "UPTO $50",
+      Restaurant(drawableId = R.drawable.rest_2, isOfferAvailable = true,offerTitle = "20% OFF", offerDescription = "UPTO $50",
         restaurantName = "KS Bakers", restaurantRating = "4.3 30 mins", itemsDescriotion = "Pizza, Burger, pasta", area = "Kukatpally")
     )
 

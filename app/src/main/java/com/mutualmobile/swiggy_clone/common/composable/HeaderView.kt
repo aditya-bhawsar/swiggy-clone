@@ -25,15 +25,15 @@ fun HeaderTextView(title: String) {
 }
 
 @Composable
-fun getSpacer() = Spacer(modifier = Modifier.height(16.dp))
+fun HeightSpacer() = Spacer(modifier = Modifier.height(16.dp))
 
 @Composable
-fun getDivider() = Divider(
+fun DividerComponent() = Divider(
   color = Color.LightGray, thickness = 1.dp, modifier = Modifier
   .height(1.dp)
   .fillMaxWidth()
 )
 
 @Composable
-fun getBackgroundImage(drawableId: Int) =
+fun BackgroundImagePainter(drawableId: Int) =
   rememberAsyncImagePainter(ContextCompat.getDrawable(LocalContext.current, drawableId))

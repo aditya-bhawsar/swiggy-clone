@@ -30,9 +30,9 @@ import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.PagerState
 import com.google.accompanist.pager.rememberPagerState
 import com.mutualmobile.swiggy_clone.R.drawable
-import com.mutualmobile.swiggy_clone.common.composable.getBackgroundImage
-import com.mutualmobile.swiggy_clone.common.composable.getDivider
-import com.mutualmobile.swiggy_clone.common.composable.getSpacer
+import com.mutualmobile.swiggy_clone.common.composable.BackgroundImagePainter
+import com.mutualmobile.swiggy_clone.common.composable.DividerComponent
+import com.mutualmobile.swiggy_clone.common.composable.HeightSpacer
 import kotlinx.coroutines.delay
 
 @OptIn(ExperimentalPagerApi::class)
@@ -40,16 +40,16 @@ import kotlinx.coroutines.delay
 fun ImageSlideShow(imagesList: List<Int>) {
   val state = rememberPagerState()
   Column {
-    getDivider()
-    getSpacer()
+    DividerComponent()
+    HeightSpacer()
     SliderView(state, imagesList)
     Spacer(modifier = Modifier.padding(4.dp))
     DotsIndicator(
       totalDots = imagesList.size,
       selectedIndex = state.currentPage
     )
-    getSpacer()
-    getDivider()
+    HeightSpacer()
+    DividerComponent()
   }
   LaunchedEffect(key1 = state.currentPage) {
     delay(3000)
@@ -116,7 +116,7 @@ fun DotsIndicator(
         ) {
 
           Image(
-            painter = getBackgroundImage(drawable.rectangle_dark),
+            painter = BackgroundImagePainter(drawable.rectangle_dark),
             contentDescription = "bg",
             contentScale = ContentScale.FillBounds,
           )
@@ -133,7 +133,7 @@ fun DotsIndicator(
           Image(
             modifier = Modifier
               .size(6.dp),
-            painter = getBackgroundImage(drawable.rectangle_dark),
+            painter = BackgroundImagePainter(drawable.rectangle_dark),
             contentDescription = "bg",
             contentScale = ContentScale.FillBounds
           )

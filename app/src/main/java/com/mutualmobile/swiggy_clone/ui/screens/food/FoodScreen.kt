@@ -1,6 +1,7 @@
 package com.mutualmobile.swiggy_clone.ui.screens.food
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -16,7 +17,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.google.accompanist.flowlayout.FlowRow
 import com.mutualmobile.swiggy_clone.common.composable.HeaderTextView
-import com.mutualmobile.swiggy_clone.common.composable.getSpacer
+import com.mutualmobile.swiggy_clone.common.composable.HeightSpacer
 import com.mutualmobile.swiggy_clone.navigator.ComposeNavigator
 import com.mutualmobile.swiggy_clone.ui.screens.food.components.ImageSlideShow
 import com.mutualmobile.swiggy_clone.ui.screens.food.components.OfferAndGuilt
@@ -50,7 +51,7 @@ fun SingleScreen(foodScreenViewModel: FoodScreenViewModel, composeNavigator: Com
     item {
       Column(modifier = Modifier.padding(16.dp)) {
         TopItems(foodScreenViewModel, composeNavigator)
-        getSpacer()
+        HeightSpacer()
         HeaderTextView(
           title = foodScreenViewModel.getRestaurantsList().size.toString() + " Restaurants to explore"
         )
@@ -94,23 +95,23 @@ internal fun GridContent(foodScreenViewModel: FoodScreenViewModel) {
 
 @Composable
 fun TopItems(foodScreenViewModel: FoodScreenViewModel, composeNavigator: ComposeNavigator) {
-  getSpacer()
+  Spacer(modifier = Modifier.height(8.dp))
   SearchButton(composeNavigator = composeNavigator)
-  getSpacer()
+  HeightSpacer()
   OfferAndGuilt()
-  getSpacer()
+  HeightSpacer()
 
   HeaderTextView(title = "Top rated near you")
   TopRatedList(foodScreenViewModel.getTopRatedList())
 
-  getSpacer()
+  HeightSpacer()
   ImageSlideShow(foodScreenViewModel.getImagesList())
 
-  getSpacer()
+  HeightSpacer()
   HeaderTextView(title = "Get it quickly")
   TopRatedList(foodScreenViewModel.getQuickList())
 
-  getSpacer()
+  HeightSpacer()
 
   HeaderTextView(title = "What's on your mind?")
   WhatOnYourMindList(foodScreenViewModel.getWhatsOnYourMindList())

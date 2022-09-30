@@ -17,9 +17,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.mutualmobile.swiggy_clone.R
-import com.mutualmobile.swiggy_clone.common.composable.getDivider
+import com.mutualmobile.swiggy_clone.common.composable.DividerComponent
 import com.mutualmobile.swiggy_clone.models.OtherPayment
-import com.mutualmobile.swiggy_clone.ui.screens.payment.getPaymentImage
+import com.mutualmobile.swiggy_clone.ui.screens.payment.PaymentImage
 import com.mutualmobile.swiggy_clone.ui.screens.payment.getRightIcon
 
 @Composable
@@ -66,12 +66,12 @@ fun MorePaymentsListItem(payment: OtherPayment) {
   ) {
     Row(modifier = Modifier.padding(16.dp), verticalAlignment = Alignment.CenterVertically) {
       Row(modifier = Modifier.weight(1f)) {
-        getPaymentImage(drawableId = payment.drawableId)
+        PaymentImage(drawableId = payment.drawableId)
         getPaymentsTexts(title = payment.title, description = payment.description)
       }
       getRightIcon(R.drawable.right_arrow_24, 15.dp)
     }
-    getDivider()
+    DividerComponent()
   }
 }
 
@@ -82,6 +82,6 @@ fun getPaymentsTexts(
 ) {
   Column(modifier = Modifier.padding(start = 16.dp)) {
     Text(text = title, fontSize = 14.sp, color = Color.DarkGray, fontWeight = FontWeight.Bold)
-    Text(text = description, fontSize = 12.sp, color = Color.DarkGray)
+    Text(text = description, fontSize = 12.sp, color = Color.Gray)
   }
 }

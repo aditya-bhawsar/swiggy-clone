@@ -20,9 +20,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.mutualmobile.swiggy_clone.R
-import com.mutualmobile.swiggy_clone.common.composable.getBackgroundImage
-import com.mutualmobile.swiggy_clone.common.composable.getSpacer
-import com.mutualmobile.swiggy_clone.ui.screens.payment.getPaymentImage
+import com.mutualmobile.swiggy_clone.common.composable.BackgroundImagePainter
+import com.mutualmobile.swiggy_clone.common.composable.HeightSpacer
+import com.mutualmobile.swiggy_clone.ui.screens.payment.PaymentImage
 
 @Composable
 fun AddNewPayment() {
@@ -32,7 +32,7 @@ fun AddNewPayment() {
   ) {
     Column(modifier = Modifier.padding(16.dp)) {
       AddPayment(title = "Add New Card", description = "Save and Pay via Cards.")
-      getSpacer()
+      HeightSpacer()
       val text =
         "Some of your saved cards might have been removed due to RBI guidelines. You can add your card again to continue using it."
       InfoText(text)
@@ -46,16 +46,16 @@ fun AddPayment(
   description: String
 ) {
   Row() {
-    getPaymentImage(
+    PaymentImage(
       modifier = Modifier
         .height(25.dp)
-        .width(40.dp), drawableId = R.drawable.add_24,
-      imageSize = 20.dp
+        .width(30.dp), drawableId = R.drawable.add_24,
+      imageSize = 18.dp
     )
     Spacer(modifier = Modifier.width(12.dp))
     Column() {
       Text(
-        text = title, fontWeight = FontWeight.Bold, fontSize = 16.sp,
+        text = title, fontWeight = FontWeight.Bold, fontSize = 15.sp,
         color = colorResource(R.color.add_payment_color)
       )
       Text(
@@ -69,16 +69,16 @@ fun AddPayment(
 fun InfoText(text: String) {
   Box(modifier = Modifier.height(80.dp)) {
     Image(
-      painter = getBackgroundImage(drawableId = R.drawable.rectangle_corner_outline),
+      painter = BackgroundImagePainter(drawableId = R.drawable.rectangle_corner_outline),
       contentDescription = ""
     )
     Row(modifier = Modifier.padding(8.dp)) {
       Image(
         modifier = Modifier.size(16.dp),
-        painter = getBackgroundImage(drawableId = R.drawable.info_24), contentDescription = ""
+        painter = BackgroundImagePainter(drawableId = R.drawable.info_24), contentDescription = ""
       )
       Spacer(modifier = Modifier.width(8.dp))
-      Text(text = text, color = Color.Gray)
+      Text(text = text, color = Color.Gray, fontSize = 12.sp)
     }
   }
 }

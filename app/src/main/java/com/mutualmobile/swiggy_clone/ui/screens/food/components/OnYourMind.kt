@@ -19,7 +19,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mutualmobile.swiggy_clone.common.composable.getSpacer
+import com.mutualmobile.swiggy_clone.common.composable.HeightSpacer
 import com.mutualmobile.swiggy_clone.models.WhatsOnMind
 
 @Composable
@@ -45,7 +45,7 @@ fun WhatOnMindListItem(item: WhatsOnMind) {
       color = Color.DarkGray
     )
 
-    getSpacer()
+    HeightSpacer()
 
     Image(
       modifier = Modifier.size(80.dp).clip(CircleShape), painter = painterResource(item.drawableId2), contentScale = ContentScale.FillBounds,

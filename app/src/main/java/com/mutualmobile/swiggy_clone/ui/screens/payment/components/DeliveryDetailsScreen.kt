@@ -26,15 +26,15 @@ fun DeliveryDetails() {
     Card(shape = RoundedCornerShape(16.dp), elevation = 10.dp) {
       Row(modifier = Modifier
         .fillMaxWidth()
-        .padding(16.dp)) {
+        .padding(8.dp)) {
         getRightIcon(drawableId = R.drawable.chain, size = 50.dp)
         Column {
           Text(
-            text = "Millet Kitchen Tiffins | Kukatpally", fontSize = 14.sp, color = Color.DarkGray
+            text = "Millet Kitchen Tiffins | Kukatpally", fontSize = 13.sp, color = Color.DarkGray
           )
           Spacer(modifier = Modifier.height(6.dp))
           Text(
-            text = "Home | Kukatpally", fontSize = 14.sp, color = Color.DarkGray
+            text = "Home | Kukatpally", fontSize = 13.sp, color = Color.DarkGray
           )
         }
       }

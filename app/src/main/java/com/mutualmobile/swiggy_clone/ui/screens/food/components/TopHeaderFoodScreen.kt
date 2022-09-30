@@ -28,7 +28,7 @@ import com.mutualmobile.swiggy_clone.navigator.SwiggyScreen
 
 @Composable
 fun ToolBarContent() {
-  Row(modifier = Modifier.padding(16.dp), verticalAlignment = Alignment.CenterVertically) {
+  Row(modifier = Modifier.padding(8.dp), verticalAlignment = Alignment.CenterVertically) {
     Column(modifier = Modifier.weight(1f)) {
       Row() {
         Image(
@@ -36,10 +36,10 @@ fun ToolBarContent() {
         )
         Spacer(modifier = Modifier.width(4.dp))
         Text(
-          text = "Home", fontWeight = FontWeight.Bold, fontSize = 18.sp, color = Color.DarkGray
+          text = "Home", fontWeight = FontWeight.Bold, fontSize = 16.sp, color = Color.DarkGray
         )
       }
-      Text(text = "Kukatpally, Hyderabad, People Pharmacy", fontSize = 14.sp, color = Color.Gray)
+      Text(text = "Kukatpally, Hyderabad, People Pharmacy", fontSize = 13.sp, color = Color.Gray)
     }
     Image(painter = painterResource(id = drawable.user_48), contentDescription = "user")
   }
@@ -51,6 +51,7 @@ fun SearchButton(composeNavigator: ComposeNavigator) {
   Column(modifier = Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
     Row(
       modifier = Modifier
+        .width(500.dp)
         .height(50.dp)
         .background(
           shape = RoundedCornerShape(16.dp), color = colorResource(
@@ -62,7 +63,7 @@ fun SearchButton(composeNavigator: ComposeNavigator) {
         modifier = Modifier
           .weight(1f)
           .padding(start = 16.dp), text = "Search for restaurant, item or more",
-        fontSize = 14.sp, color = Color.Gray
+        fontSize = 13.sp, color = Color.Gray
       )
       Image(
         modifier = Modifier.padding(end = 8.dp),

@@ -24,18 +24,24 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.dimensionResource
-import androidx.compose.ui.unit.dp
 import com.mutualmobile.swiggy_clone.R
 import com.mutualmobile.swiggy_clone.common.composable.BackButton
 import com.mutualmobile.swiggy_clone.common.composable.SpacerComponent
 import com.mutualmobile.swiggy_clone.common.data.TipItem
 import com.mutualmobile.swiggy_clone.domain.model.DMCartItem
+import com.mutualmobile.swiggy_clone.navigator.ComposeNavigator
+import com.mutualmobile.swiggy_clone.navigator.SwiggyScreen
 import com.mutualmobile.swiggy_clone.ui.theme.SwiggyBackgroundColor
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun CartItemsScreen(cartItems: List<DMCartItem>, tips: List<TipItem>, isExpanded: Boolean) {
+fun CartItemsScreen(
+    cartItems: List<DMCartItem>,
+    tips: List<TipItem>,
+    isExpanded: Boolean,
+    composeNavigator: ComposeNavigator
+) {
 
     var tip by remember { mutableStateOf(0) }
 
@@ -57,7 +63,9 @@ fun CartItemsScreen(cartItems: List<DMCartItem>, tips: List<TipItem>, isExpanded
             }
         },
         bottomBar = {
-            BottomBar(onProceedClick = { }, price = "259", onViewDetailedClick = {})
+            BottomBar(onProceedClicked = {
+                composeNavigator.navigate(SwiggyScreen.Confirm.route)
+            }, price = "259", onViewDetailsClicked = {})
         }) {
         Column(
             modifier = Modifier
@@ -69,7 +77,7 @@ fun CartItemsScreen(cartItems: List<DMCartItem>, tips: List<TipItem>, isExpanded
             verticalArrangement = Arrangement.Top,
             horizontalAlignment = Alignment.Start
         ) {
-            if (isExpanded) CartScreenExpandedLayout(cartItems, tip, tips) { tip = it}
+            if (isExpanded) CartScreenExpandedLayout(cartItems, tip, tips) { tip = it }
             else CartScreenCompactLayout(cartItems, tip, tips) { tip = it }
         }
     }
@@ -100,6 +108,7 @@ fun CartScreenExpandedLayout(
                tipChangedCallback(it)
            }, tips = tips)
        }
+
     }
     ReviewOrderPolicy()
     SpacerComponent(dimensionResourceId = R.dimen.scroll_view_padding_bottom)

@@ -62,6 +62,7 @@ dependencies {
     implementation(Lib.Kotlin.KTX_CORE)
     implementation(Lib.Android.COMPOSE_UI)
     implementation(Lib.Android.COMPOSE_MATERIAL)
+    implementation(Lib.Android.COMPOSE_MATERIAL_1x)
     implementation(Lib.Android.COMPOSE_TOOLING_PREVIEW)
     implementation(Lib.Android.COMPOSE_ACTIVITY)
     implementation(project( ":domain"))

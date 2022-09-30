@@ -19,8 +19,8 @@ import coil.compose.rememberAsyncImagePainter
 @Composable
 fun HeaderTextView(title: String) {
   Text(
-    modifier = Modifier.padding(top = 8.dp, bottom = 8.dp), text = title,
-    fontWeight = FontWeight.Bold, fontSize = 18.sp, color = Color.DarkGray
+    modifier = Modifier.padding(start = 8.dp,  top = 8.dp, bottom = 8.dp), text = title,
+    fontWeight = FontWeight.Bold, fontSize = 16.sp, color = Color.DarkGray
   )
 }
 

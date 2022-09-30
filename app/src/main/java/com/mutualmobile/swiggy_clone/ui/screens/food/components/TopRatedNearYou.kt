@@ -95,7 +95,7 @@ fun OneOfferItem(
       .background(color = Color(color.teal_700))
       .padding(4.dp), verticalAlignment = Alignment.CenterVertically
   ) {
-    Image(painter = painterResource(drawable.donut), contentDescription = "one_image")
+    Image(painter = painterResource(drawable.one), contentDescription = "one_image")
     Spacer(
       modifier = Modifier
         .width(4.dp)

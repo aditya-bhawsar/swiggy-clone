@@ -2,7 +2,6 @@
 package com.mutualmobile.swiggy_clone
 
 import android.os.Bundle
-import android.view.View
 import android.view.WindowManager
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -10,7 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import com.mutualmobile.swiggy_clone.common.composable.rememberScreenState
 import com.mutualmobile.swiggy_clone.common.sealed.ScreenType
-import com.mutualmobile.swiggy_clone.screens.ShopDetailsScreen
+import com.mutualmobile.swiggy_clone.ui.shopDetails.ShopDetailsScreen
 import com.mutualmobile.swiggy_clone.ui.theme.SwiggyCloneTheme
 
 

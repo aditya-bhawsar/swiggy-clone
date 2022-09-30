@@ -10,14 +10,16 @@ import androidx.compose.ui.res.painterResource
 import com.mutualmobile.swiggy_clone.R
 
 @Composable
-fun BackButton(onClick: () -> Unit) {
-    Image(
-        painter = painterResource(id = R.drawable.ic_back_arrow),
-        contentDescription = "",
-        modifier = Modifier
-            .size(dimensionResource(id = R.dimen.icon_size_extra_large))
-            .clickable {
-                onClick()
-            }
-    )
+fun BackButton(
+  modifier: Modifier = Modifier
+    .size(dimensionResource(id = R.dimen.icon_size_extra_large)), onClick: () -> Unit
+) {
+  Image(
+    painter = painterResource(id = R.drawable.ic_back_details),
+    contentDescription = "",
+    modifier = modifier
+      .clickable {
+        onClick()
+      }
+  )
 }

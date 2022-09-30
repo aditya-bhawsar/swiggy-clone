@@ -75,13 +75,14 @@ dependencies {
     androidTestImplementation(Lib.Test.COMPOSE_TEST_JUNIT)
     debugImplementation(Lib.Android.COMPOSE_TOOLING)
     debugImplementation(Lib.Android.COMPOSE_MANIFEST)
-
-    implementation("androidx.compose.material3:material3-window-size-class:1.0.0-beta01")
+    implementation("androidx.compose.material3:material3-window-size-class:1.0.0-beta03")
     /*DI*/
     implementation(Lib.DI.HILT_ANDROID)
     implementation(Lib.DI.HILT_NAVIGATION_COMPOSE)
     kapt(Lib.DI.HILT_COMPILER)
     kapt(Lib.DI.HILT_ANDROID_COMPILER)
+
+    implementation ("com.github.a914-gowtham:compose-ratingbar:1.2.3")
 
     implementation ("androidx.constraintlayout:constraintlayout-compose:1.0.1")
     implementation ("com.google.accompanist:accompanist-systemuicontroller:0.23.1")

@@ -2,6 +2,7 @@ buildscript {
     repositories {
         google()
         maven("https://plugins.gradle.org/m2/")
+        maven ( "https://jitpack.io" )
     }
     dependencies {
         classpath(BuildPlugins.TOOLS_BUILD_GRADLE)
@@ -15,6 +16,7 @@ allprojects {
     repositories {
         google()
         mavenCentral()
+        maven ( "https://jitpack.io" )
     }
 
     tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().all {

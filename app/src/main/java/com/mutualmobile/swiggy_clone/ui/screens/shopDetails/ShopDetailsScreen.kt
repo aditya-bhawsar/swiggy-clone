@@ -68,7 +68,9 @@ fun ShopDetailsScreen(
         }
       }
       if (itemAdded){
-        FloatingActionButton(modifier = Modifier.padding(12.dp).align(Alignment.BottomEnd),onClick = { composeNavigator.navigate(SwiggyScreen.Cart.name) }, containerColor = Color.Green, contentColor = White) {
+        FloatingActionButton(modifier = Modifier
+          .padding(12.dp)
+          .align(Alignment.BottomEnd),onClick = { composeNavigator.navigate(SwiggyScreen.Cart.name) }, containerColor = Color.Green, contentColor = White) {
           Icon(imageVector = Icons.Default.ShoppingCart, contentDescription = "")
         }
       }
@@ -141,6 +143,7 @@ private fun ScreenContent(
         PopulateHeader("$category (${foodItems.size})")
       }
       items(foodItems.size) { index ->
+
         FoodItemCard(shopItems[index], composeNavigator = composeNavigator, itemAddedCallback)
       }
       item {

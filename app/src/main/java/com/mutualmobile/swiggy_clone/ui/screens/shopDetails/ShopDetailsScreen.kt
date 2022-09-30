@@ -10,8 +10,11 @@ import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Divider
 import androidx.compose.material.TopAppBar
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ShoppingCart
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
@@ -30,6 +33,7 @@ import com.mutualmobile.swiggy_clone.R
 import com.mutualmobile.swiggy_clone.common.composable.RoundedButton
 import com.mutualmobile.swiggy_clone.common.isScrolled
 import com.mutualmobile.swiggy_clone.navigator.ComposeNavigator
+import com.mutualmobile.swiggy_clone.navigator.SwiggyScreen
 import com.mutualmobile.swiggy_clone.ui.screens.shopDetails.components.TopBar
 import com.mutualmobile.swiggy_clone.ui.screens.shopDetails.repo.FoodItemModel
 import com.mutualmobile.swiggy_clone.ui.theme.Spacing
@@ -39,6 +43,10 @@ fun ShopDetailsScreen(
   viewModel: ShopDetailsVM = hiltViewModel(),
   composeNavigator: ComposeNavigator
 ) {
+
+  var itemAdded by remember {
+    mutableStateOf(false)
+  }
   val lazyListState = rememberLazyListState()
   val systemUiController = rememberSystemUiController()
   SideEffect {
@@ -50,10 +58,20 @@ fun ShopDetailsScreen(
 
 
   Surface(modifier = Modifier.fillMaxWidth(), color = MaterialTheme.colorScheme.background) {
-    Column() {
-      CommonScrollToRevealToolbar(lazyListState, items, composeNavigator = composeNavigator) {
+    Box(){
+      Column(modifier = Modifier
+        .align(Alignment.Center)
+        .fillMaxSize()) {
+        CommonScrollToRevealToolbar(lazyListState, items, composeNavigator = composeNavigator, { itemAdded = true }) {
+        }
+      }
+      if (itemAdded){
+        FloatingActionButton(modifier = Modifier.padding(12.dp).align(Alignment.BottomEnd),onClick = { composeNavigator.navigate(SwiggyScreen.Cart.name) }, containerColor = Color.Green, contentColor = White) {
+          Icon(imageVector = Icons.Default.ShoppingCart, contentDescription = "")
+        }
       }
     }
+
   }
 
 }
@@ -64,20 +82,22 @@ fun CommonScrollToRevealToolbar(
   lazyListState: LazyListState,
   items: List<FoodItemModel>,
   composeNavigator: ComposeNavigator,
+  itemAddedCallback: () -> Unit,
   backButtonCallBack: () -> Unit,
 ) {
   if (lazyListState.isScrolled) {
     DetailsTopAppBar(backButtonCallBack)
   }
-  screenContent(lazyListState, items, composeNavigator = composeNavigator)
+  ScreenContent(lazyListState, items, composeNavigator = composeNavigator, itemAddedCallback)
 }
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-private fun screenContent(
+private fun ScreenContent(
   lazyListState: LazyListState,
   shopItems: List<FoodItemModel>,
   composeNavigator: ComposeNavigator,
+  itemAddedCallback: () -> Unit,
 ) {
   LazyColumn(
     modifier = Modifier,
@@ -116,10 +136,10 @@ private fun screenContent(
 
     groupedItems.forEach { (category, foodItems) ->
       item {
-        populateHeader("$category (${foodItems.size})")
+        PopulateHeader("$category (${foodItems.size})")
       }
       items(foodItems.size) { index ->
-        FoodItemCard(shopItems[index], composeNavigator = composeNavigator)
+        FoodItemCard(shopItems[index], composeNavigator = composeNavigator, itemAddedCallback)
       }
       item {
         Divider(
@@ -134,7 +154,7 @@ private fun screenContent(
 }
 
 @Composable
-private fun populateHeader(header: String) {
+private fun PopulateHeader(header: String) {
   Text(
     text = header,
     style = MaterialTheme.typography.titleMedium,
@@ -152,7 +172,11 @@ private fun populateHeader(header: String) {
 }
 
 @Composable
-fun FoodItemCard(item: FoodItemModel, composeNavigator: ComposeNavigator) {
+fun FoodItemCard(
+  item: FoodItemModel,
+  composeNavigator: ComposeNavigator,
+  itemAddedCallback: () -> Unit
+) {
   Row(
     modifier = Modifier
       .fillMaxWidth()
@@ -165,7 +189,7 @@ fun FoodItemCard(item: FoodItemModel, composeNavigator: ComposeNavigator) {
   ) {
     ItemDescription(item)
     Spacer(Modifier.weight(1f))
-    ItemImage(item)
+    ItemImage(item, itemAddedCallback)
   }
   Divider(
     modifier = Modifier.padding(top = Spacing.mediumSpacing),
@@ -175,7 +199,7 @@ fun FoodItemCard(item: FoodItemModel, composeNavigator: ComposeNavigator) {
 }
 
 @Composable
-fun ItemImage(item: FoodItemModel) {
+fun ItemImage(item: FoodItemModel, itemAddedCallback: () -> Unit) {
   Column {
     Image(
       modifier = Modifier
@@ -183,15 +207,15 @@ fun ItemImage(item: FoodItemModel) {
       painter = painterResource(id = item.image),
       contentDescription = null
     )
-    AddButton(item)
+    AddButton(item, itemAddedCallback)
   }
 
 }
 
 @Composable
-fun AddButton(foodItemModel: FoodItemModel) {
+fun AddButton(foodItemModel: FoodItemModel, itemAddedCallback: () -> Unit) {
   Button(
-    onClick = { /*TODO*/ },
+    onClick = { itemAddedCallback() },
     modifier = Modifier.padding(start = Spacing.largeSpacing),
     elevation = ButtonDefaults.buttonElevation(defaultElevation = 36.dp),
     colors = ButtonDefaults.buttonColors(containerColor = White),

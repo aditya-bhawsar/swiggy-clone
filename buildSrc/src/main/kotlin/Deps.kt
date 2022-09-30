@@ -20,7 +20,7 @@ object BuildPlugins {
 object Lib {
     object Android {
         private const val COMPOSE_VERSION = "1.2.0"
-        private const val MATERIAL_DESIGN_VERSION = "1.0.0-alpha01"
+        private const val MATERIAL_DESIGN_VERSION = "1.0.0-beta03"
         const val COMPOSE_COMPILER_VERSION = COMPOSE_VERSION
         private const val COMPOSE_ACTIVITY_VERSION = "1.4.0"
         private const val COMPOSE_NAVIGATION_VERSION = "2.5.0-alpha01"

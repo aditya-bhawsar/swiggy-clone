@@ -1,4 +1,3 @@
-
 plugins {
     id(BuildPlugins.ANDROID_APPLICATION_PLUGIN)
     id(BuildPlugins.KOTLIN_ANDROID_PLUGIN)
@@ -75,6 +74,7 @@ dependencies {
     debugImplementation(Lib.Android.COMPOSE_TOOLING)
     debugImplementation(Lib.Android.COMPOSE_MANIFEST)
 
+    implementation("com.google.accompanist:accompanist-flowlayout:0.26.4-beta")
     implementation("androidx.compose.material3:material3-window-size-class:1.0.0-beta01")
     /*DI*/
     implementation(Lib.DI.HILT_ANDROID)

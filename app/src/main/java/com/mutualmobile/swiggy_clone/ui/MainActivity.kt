@@ -5,7 +5,8 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.material3.windowsizeclass.ExperimentalMaterial3WindowSizeClassApi
 import androidx.compose.material3.windowsizeclass.calculateWindowSizeClass
-import com.mutualmobile.swiggy_clone.ui.screens.cart.CartScreen
+import com.mutualmobile.swiggy_clone.ui.screens.coupon.ApplyCouponScreen
+import com.mutualmobile.swiggy_clone.ui.screens.search.SearchScreen
 import com.mutualmobile.swiggy_clone.ui.theme.SwiggyCloneTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -18,7 +19,9 @@ class MainActivity : ComponentActivity() {
     setContent {
       SwiggyCloneTheme {
         val widthSizeClass = calculateWindowSizeClass(this).widthSizeClass
-        CartScreen(widthSizeClass)
+        SearchScreen(widthSizeClass = widthSizeClass, forRestaurant = false)
+      //ApplyCouponScreen(widthSizeClass = widthSizeClass)
+        //SearchScreen(widthSizeClass, forRestaurant = true)
       }
     }
   }

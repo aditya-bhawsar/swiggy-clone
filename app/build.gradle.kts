@@ -1,4 +1,3 @@
-
 plugins {
     id(BuildPlugins.ANDROID_APPLICATION_PLUGIN)
     id(BuildPlugins.KOTLIN_ANDROID_PLUGIN)
@@ -63,6 +62,7 @@ dependencies {
     implementation(Lib.Kotlin.KTX_CORE)
     implementation(Lib.Android.COMPOSE_UI)
     implementation(Lib.Android.COMPOSE_MATERIAL)
+    implementation(Lib.Android.COMPOSE_MATERIAL_1x)
     implementation(Lib.Android.COMPOSE_MATERIAL3)
     implementation(Lib.Android.COMPOSE_TOOLING_PREVIEW)
     implementation(Lib.Android.COMPOSE_ACTIVITY)
@@ -76,6 +76,16 @@ dependencies {
     debugImplementation(Lib.Android.COMPOSE_TOOLING)
     debugImplementation(Lib.Android.COMPOSE_MANIFEST)
     implementation("androidx.compose.material3:material3-window-size-class:1.0.0-beta03")
+
+     implementation(Lib.Android.MATERIAL_API)
+    /*COIL*/
+    implementation(Lib.Coil.COIL_LIB)
+
+    implementation(Lib.Accompanist.ACCOMPANIST_PAGER)
+    implementation(Lib.Accompanist.ACCOMPANIST_IDICATOR)
+    implementation(Lib.Accompanist.ACCOMPANIST_FLOW_LAYOUT)
+
+    implementation("androidx.compose.material3:material3-window-size-class:1.0.0-beta01")
     /*DI*/
     implementation(Lib.DI.HILT_ANDROID)
     implementation(Lib.DI.HILT_NAVIGATION_COMPOSE)

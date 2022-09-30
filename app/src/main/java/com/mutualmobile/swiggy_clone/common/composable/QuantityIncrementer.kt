@@ -36,7 +36,7 @@ fun QuantityIncrementer(value: Int, onIncrement: () -> Unit, onDecrement: () -> 
     ) {
         SpacerComponent(isVertical = false, dimensionResourceId = R.dimen.vertical_space_medium)
         Icon(
-            painter = painterResource(id = R.drawable.ic_baseline_horizontal_rule_24),
+            painter = painterResource(id = R.drawable.ic_horizontal_rule),
             contentDescription = "",
             tint = SwiggyGreen,
             modifier = Modifier
@@ -49,7 +49,7 @@ fun QuantityIncrementer(value: Int, onIncrement: () -> Unit, onDecrement: () -> 
         Text(text = "$value", color = SwiggyGreen)
         SpacerComponent(isVertical = false, dimensionResourceId = R.dimen.vertical_space_medium)
         Icon(
-            painter = painterResource(id = R.drawable.ic_baseline_add_24),
+            painter = painterResource(id = R.drawable.ic_add),
             contentDescription = "",
             tint = SwiggyGreen,
             modifier = Modifier

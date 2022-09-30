@@ -36,4 +36,9 @@
     <string name="taxes_and_charges">Taxes and Charges</string>
     <string name="add_tip">Add tip</string>
     <string name="to_pay">To Pay</string>
+
+    <string name="hold_on">Hold On!</string>
+    <string name="verifying_payment">We\'re verifying your payment status</string>
+    <string name="order_confirmation">Yay! Order Received</string>
+    <string name="order_confirmation_description">Your order will be delivered shortly. Keep swiggying</string>
 </resources>

@@ -22,10 +22,12 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import com.mutualmobile.swiggy_clone.R
+import com.mutualmobile.swiggy_clone.navigator.ComposeNavigator
+import com.mutualmobile.swiggy_clone.navigator.SwiggyScreen
 import com.mutualmobile.swiggy_clone.ui.theme.SwiggySubHeaderTextColor
 
 @Composable
-fun ApplyCoupon() {
+fun ApplyCoupon(composeNavigator: ComposeNavigator) {
     Column(
         modifier = Modifier.fillMaxWidth(),
         verticalArrangement = Arrangement.Center,
@@ -37,7 +39,7 @@ fun ApplyCoupon() {
                 .fillMaxWidth()
                 .clip(RoundedCornerShape(dimensionResource(id = R.dimen.rounded_corner_large)))
                 .background(Color.White)
-                .clickable { }
+                .clickable { composeNavigator.navigate(SwiggyScreen.ApplyCoupon.name) }
                 .padding(dimensionResource(id = R.dimen.padding_12)),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.SpaceBetween

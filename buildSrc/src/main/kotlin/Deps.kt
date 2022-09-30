@@ -21,13 +21,15 @@ object Lib {
     object Android {
         private const val COMPOSE_VERSION = "1.2.0"
         private const val MATERIAL3_DESIGN_VERSION = "1.0.0-alpha01"
+        private const val MATERIAL_DESIGN_VERSION = "1.0.0-beta03"
         const val COMPOSE_COMPILER_VERSION = COMPOSE_VERSION
         private const val COMPOSE_ACTIVITY_VERSION = "1.4.0"
         private const val COMPOSE_NAVIGATION_VERSION = "2.5.0-alpha01"
 
         const val COMPOSE_UI = "androidx.compose.ui:ui:${COMPOSE_VERSION}"
+        const val COMPOSE_MATERIAL = "androidx.compose.material3:material3:${MATERIAL_DESIGN_VERSION}"
+        const val COMPOSE_MATERIAL_1x = "androidx.compose.material:material:1.3.0-beta03"
         const val COMPOSE_MATERIAL3 = "androidx.compose.material3:material3:${MATERIAL3_DESIGN_VERSION}"
-        const val COMPOSE_MATERIAL = "androidx.compose.material:material:${COMPOSE_VERSION}"
         const val COMPOSE_TOOLING_PREVIEW =
             "androidx.compose.ui:ui-tooling-preview:${COMPOSE_VERSION}"
         const val COMPOSE_ACTIVITY =
@@ -38,6 +40,7 @@ object Lib {
         const val COMPOSE_NAVIGATION =
             "androidx.navigation:navigation-compose:${COMPOSE_NAVIGATION_VERSION}"
         const val APP_COMPAT = "androidx.appcompat:appcompat:1.3.0-beta01"
+        const val MATERIAL_API = "com.google.android.material:material:1.6.1"
     }
 
     object Room {
@@ -85,5 +88,17 @@ object Lib {
         const val COROUTINES = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${COROUTINES_VERSION}"
         const val COROUTINES_ANDROID =
             "org.jetbrains.kotlinx:kotlinx-coroutines-android:${COROUTINES_VERSION}"
+    }
+
+    object Coil {
+        private const val COIL_VERSION = "2.2.1"
+        const val COIL_LIB ="io.coil-kt:coil-compose:${COIL_VERSION}"
+    }
+
+    object Accompanist {
+        private const val ACCOMPANIST_VERSION = "0.25.0"
+        const val ACCOMPANIST_PAGER ="com.google.accompanist:accompanist-pager:${ACCOMPANIST_VERSION}"
+        const val ACCOMPANIST_IDICATOR ="com.google.accompanist:accompanist-pager-indicators:${ACCOMPANIST_VERSION}"
+        const val ACCOMPANIST_FLOW_LAYOUT = "com.google.accompanist:accompanist-flowlayout:0.26.4-beta"
     }
 }

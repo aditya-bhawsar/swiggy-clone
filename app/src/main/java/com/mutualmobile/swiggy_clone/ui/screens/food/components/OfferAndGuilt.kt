@@ -19,7 +19,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.mutualmobile.swiggy_clone.R.drawable
-import com.mutualmobile.swiggy_clone.common.composable.getBackgroundImage
+import com.mutualmobile.swiggy_clone.common.composable.BackgroundImagePainter
 
 @Composable
 fun OfferAndGuilt() {
@@ -42,13 +42,13 @@ fun OfferAndGuiltItem(
 ) {
   Box(modifier = modifier) {
     Image(
-      modifier = modifier, painter = getBackgroundImage(drawableId = drawable.rectangle),
+      modifier = modifier, painter = BackgroundImagePainter(drawableId = drawable.rectangle),
       contentDescription = "Background"
     )
 
     Row(modifier = modifier.padding(24.dp), verticalAlignment = Alignment.CenterVertically) {
       Text(
-        modifier = Modifier.weight(1f), text = title, fontSize = 15.sp,
+        modifier = Modifier.weight(1f), text = title, fontSize = 13.sp,
         fontWeight = FontWeight.Bold, color = Color.DarkGray
       )
       Image(painter = painterResource(drawable.burger), contentDescription = "image")

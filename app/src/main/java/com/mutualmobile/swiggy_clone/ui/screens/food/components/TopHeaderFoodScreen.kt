@@ -36,10 +36,10 @@ fun ToolBarContent() {
         )
         Spacer(modifier = Modifier.width(4.dp))
         Text(
-          text = "Home", fontWeight = FontWeight.Bold, fontSize = 18.sp, color = Color.DarkGray
+          text = "Home", fontWeight = FontWeight.Bold, fontSize = 16.sp, color = Color.DarkGray
         )
       }
-      Text(text = "Kukatpally, Hyderabad, People Pharmacy", fontSize = 14.sp, color = Color.Gray)
+      Text(text = "Kukatpally, Hyderabad, People Pharmacy", fontSize = 13.sp, color = Color.Gray)
     }
     Image(painter = painterResource(id = drawable.user_48), contentDescription = "user")
   }
@@ -62,7 +62,7 @@ fun SearchButton(composeNavigator: ComposeNavigator) {
         modifier = Modifier
           .weight(1f)
           .padding(start = 16.dp), text = "Search for restaurant, item or more",
-        fontSize = 14.sp, color = Color.Gray
+        fontSize = 13.sp, color = Color.Gray
       )
       Image(
         modifier = Modifier.padding(end = 8.dp),

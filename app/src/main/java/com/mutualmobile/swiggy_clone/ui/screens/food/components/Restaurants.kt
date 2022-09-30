@@ -27,7 +27,7 @@ fun RestaurantsItem(restaurant: Restaurant) {
   Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.padding(16.dp)) {
     TopRatedNearYouListItem(
       modifier = Modifier
-        .height(180.dp)
+        .height(150.dp)
         .width(140.dp), restaurant.toTopRatedNearYou()
     )
     RestaurantsItemTexts(restaurant)
@@ -39,12 +39,12 @@ fun RestaurantsItemTexts(restaurant: Restaurant) {
   Column(modifier = Modifier.padding(start = 16.dp)) {
     Text(
       text = restaurant.restaurantName, fontWeight = FontWeight.Bold, color = Color.DarkGray,
-      fontSize = 16.sp
+      fontSize = 14.sp
     )
     Spacer(modifier = Modifier.height(5.dp))
     Text(
       text = restaurant.restaurantRating, fontWeight = FontWeight.Bold, color = Color.DarkGray,
-      fontSize = 16.sp
+      fontSize = 14.sp
     )
     Spacer(modifier = Modifier.height(5.dp))
     /* if (restaurant.isOfferAvailable) {
@@ -54,9 +54,9 @@ fun RestaurantsItemTexts(restaurant: Restaurant) {
        )
        Spacer(modifier = Modifier.height(3.dp))
      }*/
-    Text(text = restaurant.itemsDescriotion, color = Color.DarkGray, fontSize = 16.sp)
+    Text(text = restaurant.itemsDescriotion, color = Color.DarkGray, fontSize = 14.sp)
     Spacer(modifier = Modifier.height(5.dp))
-    Text(text = restaurant.area, color = Color.DarkGray, fontSize = 16.sp)
+    Text(text = restaurant.area, color = Color.DarkGray, fontSize = 14.sp)
     Spacer(modifier = Modifier.height(5.dp))
     OfferData()
   }
@@ -67,13 +67,13 @@ fun OfferData() {
   Row(modifier = Modifier.background(color = colorResource(id = color.light_grey), shape = RoundedCornerShape(8.dp)).padding(4.dp)) {
     Column(verticalArrangement = Arrangement.Center) {
       Text(
-        text = "EXTRA 10% OFF", fontWeight = FontWeight.Bold, color = Color.Red, fontSize = 14.sp
+        text = "EXTRA 10% OFF", fontWeight = FontWeight.Bold, color = Color.Red, fontSize = 13.sp
       )
       Text(text = "AND FREE DELIVERY", color = Color.DarkGray, fontSize = 11.sp)
     }
     Spacer(modifier = Modifier.width(8.dp))
     Column(verticalArrangement = Arrangement.Center, modifier = Modifier.padding(end = 4.dp)) {
-      Text(text = "One", fontWeight = FontWeight.Bold, color = Color.Red, fontSize = 14.sp)
+      Text(text = "One", fontWeight = FontWeight.Bold, color = Color.Red, fontSize = 13.sp)
       Text(text = "BENEFITS", color = Color.DarkGray, fontSize = 11.sp)
     }
   }

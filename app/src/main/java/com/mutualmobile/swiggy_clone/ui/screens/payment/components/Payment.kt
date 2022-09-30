@@ -33,8 +33,7 @@ import androidx.compose.ui.unit.sp
 import com.mutualmobile.swiggy_clone.R
 import com.mutualmobile.swiggy_clone.R.drawable
 import com.mutualmobile.swiggy_clone.common.composable.HeaderTextView
-import com.mutualmobile.swiggy_clone.common.composable.getBackgroundImage
-import com.mutualmobile.swiggy_clone.common.composable.getDivider
+import com.mutualmobile.swiggy_clone.common.composable.BackgroundImagePainter
 import com.mutualmobile.swiggy_clone.ui.screens.payment.PaymentsViewModel
 
 @Composable
@@ -91,18 +90,18 @@ fun PreferredPayment() {
     shape = RoundedCornerShape(16.dp), elevation = 10.dp
   ) {
     Row(modifier = Modifier.padding(16.dp)) {
-      getPaymentImage(drawableId = drawable.wallet_24)
+      PaymentImage(drawableId = drawable.wallet_24)
       Column {
         Row(
           modifier = Modifier.padding(start = 16.dp, end = 8.dp, bottom = 16.dp),
           verticalAlignment = Alignment.CenterVertically
         ) {
           Text(
-            modifier = Modifier.weight(1f), text = "satyavathi.android@okbankname",
-            fontSize = 16.sp, maxLines = 1, overflow = TextOverflow.Ellipsis
+            modifier = Modifier.weight(1f), text = "test.account@okbankname",
+            fontSize = 14.sp, maxLines = 1, overflow = TextOverflow.Ellipsis, color = Color.DarkGray
           )
           Spacer(modifier = Modifier.width(4.dp))
-          getRightIcon(drawable.check_circle_24, 24.dp)
+          getRightIcon(drawable.check_circle_24, 20.dp)
         }
         getPreferredPaymentButton()
       }
@@ -119,15 +118,15 @@ fun PaymentToolBar(onBackPressed: () -> Unit) {
         Spacer(modifier = Modifier.width(8.dp))
         Column() {
           Text(
-            text = "Payment Options", fontWeight = FontWeight.Bold, fontSize = 16.sp,
+            text = "Payment Options", fontWeight = FontWeight.Bold, fontSize = 15.sp,
             color = Color.DarkGray
           )
+          Spacer(modifier = Modifier.height(4.dp))
           Text(
             text = "1 item Total $100", fontSize = 12.sp, color = Color.Gray
           )
         }
       }
-      getDivider()
     }
   }
 }
@@ -140,7 +139,7 @@ fun getPreferredPaymentButton() {
       .padding(start = 32.dp, end = 32.dp), contentAlignment = Alignment.Center
   ) {
     Image(
-      painter = getBackgroundImage(drawable.rectangle_payment),
+      painter = BackgroundImagePainter(drawable.rectangle_payment),
       contentDescription = "bg",
     )
     Text(
@@ -151,21 +150,21 @@ fun getPreferredPaymentButton() {
 }
 
 @Composable
-fun getPaymentImage(
+fun PaymentImage(
   drawableId: Int,
-  modifier: Modifier = Modifier.size(40.dp),
-  imageSize: Dp = 25.dp
+  modifier: Modifier = Modifier.size(30.dp),
+  imageSize: Dp = 20.dp
 ) {
   Box(modifier = modifier, contentAlignment = Alignment.Center) {
     Image(
-      painter = getBackgroundImage(drawable.rectangle_outline),
+      painter = BackgroundImagePainter(drawable.rectangle_outline),
       contentDescription = "bg",
     )
 
     Image(
       modifier = Modifier
         .size(imageSize),
-      painter = getBackgroundImage(drawableId),
+      painter = BackgroundImagePainter(drawableId),
       contentDescription = "bg",
     )
   }
@@ -181,7 +180,7 @@ fun getRightIcon(
     Image(
       modifier = Modifier
         .size(size),
-      painter = getBackgroundImage(drawableId),
+      painter = BackgroundImagePainter(drawableId),
       contentDescription = "bg",
     )
   }
@@ -200,7 +199,7 @@ fun PaymentBanner() {
         .padding(start = 16.dp, end = 16.dp), shape = RoundedCornerShape(16.dp), elevation = 10.dp
     ) {
       Image(
-        painter = getBackgroundImage(drawableId = R.drawable.payment_banner),
+        painter = BackgroundImagePainter(drawableId = R.drawable.payment_banner),
         contentDescription = "", contentScale = ContentScale.FillBounds
       )
     }

@@ -20,7 +20,6 @@ import androidx.compose.ui.graphics.Color.Companion.White
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
@@ -35,9 +34,6 @@ import com.mutualmobile.swiggy_clone.ui.screens.shopDetails.components.TopBar
 import com.mutualmobile.swiggy_clone.ui.screens.shopDetails.repo.FoodItemModel
 import com.mutualmobile.swiggy_clone.ui.theme.Spacing
 
-
-@Preview(showSystemUi = true)
-@Preview(showBackground = true)
 @Composable
 fun ShopDetailsScreen(
   viewModel: ShopDetailsVM = hiltViewModel(),
@@ -55,10 +51,9 @@ fun ShopDetailsScreen(
 
   Surface(modifier = Modifier.fillMaxWidth(), color = MaterialTheme.colorScheme.background) {
     Column() {
-      CommonScrollToRevealToolbar(lazyListState, items) {
+      CommonScrollToRevealToolbar(lazyListState, items, composeNavigator = composeNavigator) {
       }
     }
-
   }
 
 }
@@ -68,12 +63,13 @@ fun ShopDetailsScreen(
 fun CommonScrollToRevealToolbar(
   lazyListState: LazyListState,
   items: List<FoodItemModel>,
-  backButtonCallBack: () -> Unit
+  composeNavigator: ComposeNavigator,
+  backButtonCallBack: () -> Unit,
 ) {
   if (lazyListState.isScrolled) {
     DetailsTopAppBar(backButtonCallBack)
   }
-  screenContent(lazyListState, items)
+  screenContent(lazyListState, items, composeNavigator = composeNavigator)
 }
 
 @OptIn(ExperimentalFoundationApi::class)
@@ -81,6 +77,7 @@ fun CommonScrollToRevealToolbar(
 private fun screenContent(
   lazyListState: LazyListState,
   shopItems: List<FoodItemModel>,
+  composeNavigator: ComposeNavigator,
 ) {
   LazyColumn(
     modifier = Modifier,
@@ -122,7 +119,7 @@ private fun screenContent(
         populateHeader("$category (${foodItems.size})")
       }
       items(foodItems.size) { index ->
-        FoodItemCard(shopItems[index])
+        FoodItemCard(shopItems[index], composeNavigator = composeNavigator)
       }
       item {
         Divider(
@@ -155,7 +152,7 @@ private fun populateHeader(header: String) {
 }
 
 @Composable
-fun FoodItemCard(item: FoodItemModel) {
+fun FoodItemCard(item: FoodItemModel, composeNavigator: ComposeNavigator) {
   Row(
     modifier = Modifier
       .fillMaxWidth()
